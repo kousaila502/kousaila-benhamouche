@@ -160,7 +160,7 @@ const Contact = () => {
 
                         {submitted ? (
                             <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
-                                <div className="text-green-600 text-5xl mb-4">&#10003;</div>
+                                <div className="text-green-600 text-5xl mb-4">✓</div>
                                 <h4 className="text-xl font-semibold text-green-800 mb-2">Message Sent!</h4>
                                 <p className="text-green-700">Thank you for reaching out. I&apos;ll get back to you soon!</p>
                                 <button
