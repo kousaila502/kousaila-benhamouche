@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const Footer = () => {
     const currentYear = new Date().getFullYear();
 
@@ -32,16 +34,16 @@ const Footer = () => {
     ];
 
     return (
-        <footer className="bg-gray-900 text-white">
+        <footer className="bg-secondary-900 text-white">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {/* Brand Section */}
                     <div className="space-y-4">
-                        <h3 className="text-2xl font-bold text-blue-400">Kousaila</h3>
-                        <p className="text-gray-300">
+                        <h3 className="text-2xl font-bold text-primary-400">Kousaila</h3>
+                        <p className="text-secondary-300">
                             Backend Developer | DevOps Researcher
                         </p>
-                        <p className="text-gray-400 text-sm">
+                        <p className="text-secondary-400 text-sm">
                             ESI-SBA Graduate • Problem Solver
                         </p>
                     </div>
@@ -50,10 +52,10 @@ const Footer = () => {
                     <div className="space-y-4">
                         <h4 className="text-lg font-semibold">Quick Links</h4>
                         <nav className="flex flex-col space-y-2">
-                            <a href="#about" className="text-gray-300 hover:text-blue-400 transition-colors">About</a>
-                            <a href="#projects" className="text-gray-300 hover:text-blue-400 transition-colors">Projects</a>
-                            <a href="#skills" className="text-gray-300 hover:text-blue-400 transition-colors">Skills</a>
-                            <a href="#contact" className="text-gray-300 hover:text-blue-400 transition-colors">Contact</a>
+                            <a href="#about" className="text-secondary-300 hover:text-primary-400 transition-colors">About</a>
+                            <a href="#projects" className="text-secondary-300 hover:text-primary-400 transition-colors">Projects</a>
+                            <a href="#skills" className="text-secondary-300 hover:text-primary-400 transition-colors">Skills</a>
+                            <a href="#contact" className="text-secondary-300 hover:text-primary-400 transition-colors">Contact</a>
                         </nav>
                     </div>
 
@@ -65,23 +67,23 @@ const Footer = () => {
                                 <a
                                     key={link.name}
                                     href={link.href}
-                                    className="text-gray-400 hover:text-blue-400 transition-colors"
+                                    className="text-secondary-400 hover:text-primary-400 transition-colors"
                                     aria-label={link.name}
                                 >
                                     {link.icon}
                                 </a>
                             ))}
                         </div>
-                        <p className="text-gray-400 text-sm">
+                        <p className="text-secondary-400 text-sm">
                             kousaila.dev
                         </p>
                     </div>
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-                    <p className="text-gray-400 text-sm">
-                        © {currentYear} Kousaila. All rights reserved.
+                <div className="border-t border-secondary-800 mt-8 pt-8 text-center">
+                    <p className="text-secondary-400 text-sm">
+                        &copy; {currentYear} Kousaila. All rights reserved.
                     </p>
                 </div>
             </div>
