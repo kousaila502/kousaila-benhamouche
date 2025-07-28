@@ -29,19 +29,19 @@ const academicBoxVariants = {
 
 const skills = [
     {
-        img: "/images/frontend.jpg",
+        //img: "/skills/frontend.jpg", // Replace with your actual image paths
         title: "Frontend",
         icon: "🧠",
         description: "Modern UI/UX, React, Tailwind, and delightful user experiences."
     },
     {
-        img: "/images/backend.jpg",
+        //img: "/skills/backend.jpg",
         title: "Backend",
         icon: "🔧",
         description: "Robust APIs, scalable systems, and clean architecture."
     },
     {
-        img: "/images/devops.jpg",
+        //img: "/skills/devops.jpg",
         title: "DevOps",
         icon: "⚙️",
         description: "CI/CD, automation, cloud, and infrastructure as code."
@@ -153,7 +153,7 @@ const About = () => {
                         Skills Overview
                     </motion.h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                        {skills.map((skill) => (
+                        {skills.map((skill, _) => (
                             <motion.div
                                 key={skill.title}
                                 className="flex flex-col items-center bg-gray-50 rounded-2xl shadow-md border border-gray-100 p-6 group cursor-pointer transition-all"
@@ -163,16 +163,14 @@ const About = () => {
                                     boxShadow: "0 8px 32px 0 rgba(59,130,246,0.13), 0 0 24px 2px rgba(168,85,247,0.14)",
                                 }}
                             >
-                                <div className="w-20 h-20 rounded-xl overflow-hidden mb-4 shadow-lg border-2 border-white group-hover:ring-4 group-hover:ring-blue-200 transition flex items-center justify-center bg-white relative">
-                                    <Image
-                                        src={skill.img}
+                                <div className="w-20 h-20 rounded-xl overflow-hidden mb-4 shadow-lg border-2 border-white group-hover:ring-4 group-hover:ring-blue-200 transition flex items-center justify-center bg-white">
+                                    <img
+                                        //src={skill.img}
                                         alt={skill.title}
-                                        width={80}
-                                        height={80}
                                         className="object-cover w-full h-full"
                                         loading="lazy"
                                     />
-                                    <span className="absolute text-3xl left-1.5 top-1.5">{skill.icon}</span>
+                                    <span className="absolute text-3xl">{skill.icon}</span>
                                 </div>
                                 <span className="text-lg font-bold text-gray-800 mb-2">{skill.title}</span>
                                 <span className="text-sm text-gray-600 text-center">{skill.description}</span>
