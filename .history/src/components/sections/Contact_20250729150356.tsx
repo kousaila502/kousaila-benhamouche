@@ -98,27 +98,16 @@ const Contact = () => {
         }
         setIsSubmitting(true);
         try {
-            console.log({
-                service: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-                template: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-                publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
-                vars: {
-                    from_name: formData.name,
-                    from_email: formData.email,
-                    subject: formData.subject,
-                    message: formData.message
-                }
-            });
             await emailjs.send(
-                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
-                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
+                'service_ctgvas3',
+                'template_2b0ev8a',
                 {
                     from_name: formData.name,
                     from_email: formData.email,
                     subject: formData.subject,
                     message: formData.message
                 },
-                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string
+                'a2NaD33Q3O7j5pmA1'
             );
             setIsSubmitting(false);
             setSubmitted(true);
@@ -232,18 +221,6 @@ const Contact = () => {
                         transition={{ duration: 0.7, ease: [0.42, 0, 0.58, 1] as [number, number, number, number] }}
                     >
                         <h3 className="text-2xl font-bold text-gray-800 mb-6">Send Message</h3>
-                        {/* Error Message Display */}
-                        {sendError && (
-                            <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
-                                <p className="text-red-700 text-sm">{sendError}</p>
-                                <button
-                                    onClick={() => setSendError(null)}
-                                    className="text-red-600 hover:text-red-800 text-xs mt-1"
-                                >
-                                    Dismiss
-                                </button>
-                            </div>
-                        )}
                         {submitted ? (
                             <motion.div
                                 className="bg-green-50 border border-green-200 rounded-lg p-6 text-center"

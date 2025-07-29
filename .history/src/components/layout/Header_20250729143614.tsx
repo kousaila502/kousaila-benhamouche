@@ -4,10 +4,9 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 
-// Import Google Fonts (Gabriela Stencil for name, Inter for nav)
-import { Inter, Pacifico, Gabriela } from 'next/font/google';
+// Import Google Fonts (Pacifico for name, Inter for nav)
+import { Pacifico, Inter } from 'next/font/google';
 
-const gabriela = Gabriela({ subsets: ['latin'], weight: '400', display: 'swap' });
 const pacifico = Pacifico({ subsets: ['latin'], weight: '400', display: 'swap' });
 const inter = Inter({ subsets: ['latin'], weight: ['400', '600'], display: 'swap' });
 
@@ -51,12 +50,12 @@ const Header = () => {
                     {/* Logo/Name */}
                     <Link
                         href="/"
-                        className={`${gabriela.className} text-lg md:text-xl tracking-wide text-gray-800 hover:text-blue-700 transition font-normal`}
+                        className={`${pacifico.className} text-lg md:text-xl tracking-wide text-pink-500 hover:text-blue-400 transition font-normal`}
                         aria-label="Homepage"
                         tabIndex={0}
                         style={{ letterSpacing: '0.04em' }}
                     >
-                        Kousaila Benhamouche
+                        Kousaila Benhmaouche
                     </Link>
 
                     {/* Desktop Navigation */}

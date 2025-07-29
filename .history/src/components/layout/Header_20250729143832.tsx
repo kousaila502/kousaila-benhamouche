@@ -51,12 +51,12 @@ const Header = () => {
                     {/* Logo/Name */}
                     <Link
                         href="/"
-                        className={`${gabriela.className} text-lg md:text-xl tracking-wide text-gray-800 hover:text-blue-700 transition font-normal`}
+                        className={`${gabriela.className} text-lg md:text-xl tracking-wide text-pink-500 hover:text-blue-400 transition font-normal`}
                         aria-label="Homepage"
                         tabIndex={0}
                         style={{ letterSpacing: '0.04em' }}
                     >
-                        Kousaila Benhamouche
+                        Kousaila benhamouche
                     </Link>
 
                     {/* Desktop Navigation */}

@@ -98,17 +98,6 @@ const Contact = () => {
         }
         setIsSubmitting(true);
         try {
-            console.log({
-                service: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-                template: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-                publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
-                vars: {
-                    from_name: formData.name,
-                    from_email: formData.email,
-                    subject: formData.subject,
-                    message: formData.message
-                }
-            });
             await emailjs.send(
                 process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
                 process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
