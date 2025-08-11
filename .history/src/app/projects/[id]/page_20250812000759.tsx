@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { getProjectById } from './data';
+import { getProjectById } from '../data';
 
 interface PageProps {
     params: Promise<{ id: string }>;
@@ -96,17 +96,15 @@ export default async function ProjectDetail({ params }: PageProps) {
                             Interactive Swagger documentation with live API testing, health monitoring, and production metrics.
                         </p>
                         <div className="flex flex-wrap gap-3">
-                            {project.apiDocsUrl && (
-                                <a
-                                    href={project.apiDocsUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-                                >
-                                    📚 Interactive API Docs
-                                </a>
-                            )}
-                            {'healthUrl' in project && project.healthUrl && (
+                            <a
+                                href={project.apiDocsUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                            >
+                                📚 Interactive API Docs
+                            </a>
+                            {project.healthUrl && (
                                 <a
                                     href={project.healthUrl}
                                     target="_blank"
@@ -116,16 +114,14 @@ export default async function ProjectDetail({ params }: PageProps) {
                                     ❤️ Health Monitor
                                 </a>
                             )}
-                            {project.githubUrl && (
-                                <a
-                                    href={project.githubUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors"
-                                >
-                                    📱 Source Code
-                                </a>
-                            )}
+                            <a
+                                href={project.githubUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors"
+                            >
+                                📱 Source Code
+                            </a>
                         </div>
                     </div>
                 )}
@@ -142,16 +138,14 @@ export default async function ProjectDetail({ params }: PageProps) {
                             5-cloud architecture with 17 active users, $1,593.95 revenue, and 100% GitOps automation.
                         </p>
                         <div className="flex flex-wrap gap-3">
-                            {project.liveUrl && (
-                                <a
-                                    href={project.liveUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
-                                >
-                                    🌐 Live Platform
-                                </a>
-                            )}
+                            <a
+                                href={project.liveUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+                            >
+                                🌐 Live Platform
+                            </a>
                             <a
                                 href="https://34.95.5.30.nip.io/user/docs"
                                 target="_blank"
@@ -172,8 +166,8 @@ export default async function ProjectDetail({ params }: PageProps) {
                     </div>
                 )}
 
-                {/* Live Demo Banner for E-Social-Assistance */}
-                {project.id === 'e-social-assistance' && (
+                {/* Live Demo Banner for Full-Stack Projects */}
+                {isFullstack && project.liveUrl && (
                     <div className="bg-gradient-to-r from-green-50 to-blue-50 border border-green-200 rounded-lg p-6">
                         <div className="flex items-center mb-4">
                             <div className="w-3 h-3 bg-green-500 rounded-full mr-2 animate-pulse"></div>
@@ -181,19 +175,17 @@ export default async function ProjectDetail({ params }: PageProps) {
                         </div>
                         <h3 className="text-lg font-semibold text-gray-800 mb-2">Experience the Full Platform</h3>
                         <p className="text-gray-600 mb-4">
-                            Complete social welfare management system with real-time data, secure authentication, and production-grade features.
+                            Complete full-stack solution with real-time data, secure authentication, and production-grade features.
                         </p>
                         <div className="flex flex-wrap gap-3">
-                            {project.liveUrl && (
-                                <a
-                                    href={project.liveUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-                                >
-                                    🚀 Live Demo
-                                </a>
-                            )}
+                            <a
+                                href={project.liveUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                            >
+                                🚀 Live Demo
+                            </a>
                             {project.apiDocsUrl && (
                                 <a
                                     href={project.apiDocsUrl}
@@ -209,30 +201,24 @@ export default async function ProjectDetail({ params }: PageProps) {
                 )}
 
                 {/* Production Metrics for Microservices */}
-                {isMicroservice && 'metrics' in project && project.metrics && (
+                {isMicroservice && project.metrics && (
                     <section className="bg-gray-50 p-6 rounded-lg">
                         <h2 className="text-2xl font-bold text-gray-800 mb-4">🔥 Production Metrics</h2>
                         <div className="grid md:grid-cols-3 gap-4">
-                            {'activeUsers' in project.metrics && (
-                                <div className="bg-white p-4 rounded-lg border">
-                                    <div className="text-2xl font-bold text-blue-600">{project.metrics.activeUsers}</div>
-                                    <div className="text-sm text-gray-600">Active Users</div>
-                                </div>
-                            )}
-                            {'uptime' in project.metrics && (
-                                <div className="bg-white p-4 rounded-lg border">
-                                    <div className="text-2xl font-bold text-green-600">{project.metrics.uptime}</div>
-                                    <div className="text-sm text-gray-600">Uptime</div>
-                                </div>
-                            )}
-                            {'responseTime' in project.metrics && (
-                                <div className="bg-white p-4 rounded-lg border">
-                                    <div className="text-2xl font-bold text-purple-600">{project.metrics.responseTime}</div>
-                                    <div className="text-sm text-gray-600">Response Time</div>
-                                </div>
-                            )}
+                            <div className="bg-white p-4 rounded-lg border">
+                                <div className="text-2xl font-bold text-blue-600">{project.metrics.activeUsers}</div>
+                                <div className="text-sm text-gray-600">Active Users</div>
+                            </div>
+                            <div className="bg-white p-4 rounded-lg border">
+                                <div className="text-2xl font-bold text-green-600">{project.metrics.uptime}</div>
+                                <div className="text-sm text-gray-600">Uptime</div>
+                            </div>
+                            <div className="bg-white p-4 rounded-lg border">
+                                <div className="text-2xl font-bold text-purple-600">{project.metrics.responseTime}</div>
+                                <div className="text-sm text-gray-600">Response Time</div>
+                            </div>
                         </div>
-                        {project.id === 'order-service-microservice' && 'businessMetrics' in project && project.businessMetrics && (
+                        {project.id === 'order-service-microservice' && project.businessMetrics && (
                             <div className="mt-4 grid md:grid-cols-2 gap-4">
                                 <div className="bg-white p-4 rounded-lg border">
                                     <div className="text-2xl font-bold text-yellow-600">${project.businessMetrics.totalRevenue}</div>
@@ -248,34 +234,26 @@ export default async function ProjectDetail({ params }: PageProps) {
                 )}
 
                 {/* Cost Optimization Metrics for Platform/DevOps */}
-                {(isPlatform || project.category === 'devops') && 'metrics' in project && project.metrics && (
+                {(isPlatform || project.category === 'devops') && project.metrics && (
                     <section className="bg-gray-50 p-6 rounded-lg">
                         <h2 className="text-2xl font-bold text-gray-800 mb-4">💰 Cost Optimization Results</h2>
                         <div className="grid md:grid-cols-4 gap-4">
-                            {'costReduction' in project.metrics && (
-                                <div className="bg-white p-4 rounded-lg border">
-                                    <div className="text-2xl font-bold text-green-600">{project.metrics.costReduction}</div>
-                                    <div className="text-sm text-gray-600">Cost Reduction</div>
-                                </div>
-                            )}
-                            {'automation' in project.metrics && (
-                                <div className="bg-white p-4 rounded-lg border">
-                                    <div className="text-2xl font-bold text-blue-600">{project.metrics.automation}</div>
-                                    <div className="text-sm text-gray-600">Automation</div>
-                                </div>
-                            )}
-                            {'uptime' in project.metrics && (
-                                <div className="bg-white p-4 rounded-lg border">
-                                    <div className="text-2xl font-bold text-purple-600">{project.metrics.uptime}</div>
-                                    <div className="text-sm text-gray-600">Uptime</div>
-                                </div>
-                            )}
-                            {'cloudProviders' in project.metrics && (
-                                <div className="bg-white p-4 rounded-lg border">
-                                    <div className="text-2xl font-bold text-orange-600">{project.metrics.cloudProviders}</div>
-                                    <div className="text-sm text-gray-600">Cloud Providers</div>
-                                </div>
-                            )}
+                            <div className="bg-white p-4 rounded-lg border">
+                                <div className="text-2xl font-bold text-green-600">{project.metrics.costReduction}</div>
+                                <div className="text-sm text-gray-600">Cost Reduction</div>
+                            </div>
+                            <div className="bg-white p-4 rounded-lg border">
+                                <div className="text-2xl font-bold text-blue-600">{project.metrics.automation}</div>
+                                <div className="text-sm text-gray-600">Automation</div>
+                            </div>
+                            <div className="bg-white p-4 rounded-lg border">
+                                <div className="text-2xl font-bold text-purple-600">{project.metrics.uptime || project.metrics.activeUsers}</div>
+                                <div className="text-sm text-gray-600">{project.metrics.uptime ? 'Uptime' : 'Active Users'}</div>
+                            </div>
+                            <div className="bg-white p-4 rounded-lg border">
+                                <div className="text-2xl font-bold text-orange-600">{project.metrics.cloudProviders || project.metrics.responseTime}</div>
+                                <div className="text-sm text-gray-600">{project.metrics.cloudProviders ? 'Cloud Providers' : 'Response Time'}</div>
+                            </div>
                         </div>
                     </section>
                 )}
@@ -312,7 +290,7 @@ export default async function ProjectDetail({ params }: PageProps) {
                 </section>
 
                 {/* Screenshots Gallery for Microservices */}
-                {isMicroservice && 'images' in project && project.images?.gallery && (
+                {isMicroservice && project.images?.gallery && (
                     <section>
                         <h2 className="text-3xl font-bold text-gray-800 mb-6">📸 Production Screenshots</h2>
                         <div className="grid md:grid-cols-2 gap-6">
@@ -368,7 +346,7 @@ export default async function ProjectDetail({ params }: PageProps) {
                 </section>
 
                 {/* Special Features for E-Social-Assistance */}
-                {project.id === 'e-social-assistance' && 'platformFeatures' in project && project.platformFeatures && (
+                {project.id === 'e-social-assistance' && project.platformFeatures && (
                     <section className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-lg">
                         <h2 className="text-3xl font-bold text-purple-600 mb-6">Platform Features</h2>
                         <div className="grid md:grid-cols-2 gap-6">

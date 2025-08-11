@@ -192,7 +192,7 @@ const Projects = () => {
             y: 0,
             transition: { 
                 duration: 0.6,
-                ease: [0.22, 1, 0.36, 1] as [number, number, number, number]
+                ease: [0.42, 0, 0.58, 1] // <-- fix here
             }
         }
     };
@@ -204,7 +204,7 @@ const Projects = () => {
             scale: 1,
             transition: { 
                 duration: 0.8,
-                ease: [0.22, 1, 0.36, 1] as [number, number, number, number]
+                ease: [0.42, 0, 0.58, 1] // <-- fix here
             }
         }
     };
