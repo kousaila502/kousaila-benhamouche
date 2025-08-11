@@ -13,7 +13,7 @@ export const eSocialAssistanceProject = {
     featured: true,
     category: "fullstack",
     images: {
-        main: "/projects/e-social-assistance.png",
+        main: "/projects/esocial.PNG",
         gallery: [
             {
                 src: "/projects/e-social-assistance.png",

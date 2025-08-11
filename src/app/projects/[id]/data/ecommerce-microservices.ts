@@ -13,7 +13,7 @@ export const ecommerceMultiCloudProject = {
     featured: true,
     category: "platform",
     images: {
-        main: "/projects/ecommerce-microservices.png",
+        main: "/projects/ecommerce.PNG",
         gallery: [
             {
                 src: "/projects/ecommerce-microservices.png",

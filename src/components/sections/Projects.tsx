@@ -4,13 +4,13 @@ import Link from 'next/link';
 import { motion } from "framer-motion";
 import Image from 'next/image';
 import {
-    SiDocker, SiKubernetes, SiPython, SiNodedotjs, SiExpress, SiFastapi, SiSpringboot, 
-    SiReact, SiMongodb, SiMysql, SiPostgresql, SiGraphql, SiGithub, SiSwagger, 
+    SiDocker, SiKubernetes, SiPython, SiNodedotjs, SiExpress, SiFastapi, SiSpringboot,
+    SiReact, SiMongodb, SiMysql, SiPostgresql, SiGraphql, SiGithub, SiSwagger,
     SiTypescript, SiTailwindcss, SiVercel, SiJavascript
 } from "react-icons/si";
-import { 
-    ExternalLink, PlayCircle, BookOpen, Code2, Database, Cloud, 
-    Zap, TrendingUp, Users, DollarSign, Activity, Server, 
+import {
+    ExternalLink, PlayCircle, BookOpen, Code2, Database, Cloud,
+    Zap, TrendingUp, Users, DollarSign, Activity, Server,
     Layers, GitBranch, Shield, Gauge
 } from "lucide-react";
 
@@ -106,12 +106,12 @@ const Projects = () => {
                 github: "https://github.com/kousaila502/enterprise-social-platform",
                 docs: "https://enterprise-social-platform.onrender.com/api-docs"
             },
-            image: "/projects/e-social-assistance.png",
+            image: "/projects/esocial.PNG",
             badge: "Production Ready"
         },
         {
             id: 'ecommerce-microservices',
-            title: "Multi-Cloud GitOps Platform",
+            title: "Multi-Cloud Ecommerce Platform",
             subtitle: "5-Cloud Architecture with Cost Optimization",
             description: "World's first systematic multi-cloud GitOps orchestration achieving 60% cost reduction and 100% automation.",
             technologies: ["React", "Python", "Node.js", "Java", "Docker", "Kubernetes", "ArgoCD", "Grafana"],
@@ -121,7 +121,7 @@ const Projects = () => {
                 github: "https://github.com/kousaila502/ecommerce-microservices-platform",
                 gateway: "https://34.95.5.30.nip.io"
             },
-            image: "/projects/ecommerce-microservices.png",
+            image: "/projects/ecommerce.PNG",
             badge: "Research Platform"
         }
     ];
@@ -187,10 +187,10 @@ const Projects = () => {
 
     const itemVariants = {
         hidden: { opacity: 0, y: 30 },
-        show: { 
-            opacity: 1, 
+        show: {
+            opacity: 1,
             y: 0,
-            transition: { 
+            transition: {
                 duration: 0.6,
                 ease: [0.22, 1, 0.36, 1] as [number, number, number, number]
             }
@@ -199,10 +199,10 @@ const Projects = () => {
 
     const heroVariants = {
         hidden: { opacity: 0, scale: 0.95 },
-        show: { 
-            opacity: 1, 
+        show: {
+            opacity: 1,
             scale: 1,
-            transition: { 
+            transition: {
                 duration: 0.8,
                 ease: [0.22, 1, 0.36, 1] as [number, number, number, number]
             }
@@ -214,26 +214,26 @@ const Projects = () => {
             {/* Animated background elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <motion.div
-                    animate={{ 
+                    animate={{
                         rotate: [0, 360],
                         scale: [1, 1.1, 1]
                     }}
-                    transition={{ 
-                        duration: 20, 
-                        repeat: Infinity, 
-                        ease: "linear" 
+                    transition={{
+                        duration: 20,
+                        repeat: Infinity,
+                        ease: "linear"
                     }}
                     className="absolute top-1/4 -right-32 w-64 h-64 bg-gradient-to-br from-purple-200 to-blue-200 rounded-full opacity-20 blur-3xl"
                 />
                 <motion.div
-                    animate={{ 
+                    animate={{
                         rotate: [360, 0],
                         scale: [1, 1.2, 1]
                     }}
-                    transition={{ 
-                        duration: 25, 
-                        repeat: Infinity, 
-                        ease: "linear" 
+                    transition={{
+                        duration: 25,
+                        repeat: Infinity,
+                        ease: "linear"
                     }}
                     className="absolute bottom-1/4 -left-32 w-96 h-96 bg-gradient-to-tr from-green-200 to-purple-200 rounded-full opacity-15 blur-3xl"
                 />
@@ -254,7 +254,7 @@ const Projects = () => {
                             Portfolio Showcase
                         </span>
                     </motion.div>
-                    <motion.h1 
+                    <motion.h1
                         variants={itemVariants}
                         className="text-5xl md:text-7xl font-black bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent mb-6"
                     >
@@ -264,12 +264,12 @@ const Projects = () => {
                             Digital Solutions
                         </span>
                     </motion.h1>
-                    <motion.p 
+                    <motion.p
                         variants={itemVariants}
                         className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
                     >
-                        From microservices processing <span className="font-bold text-green-600">$1,593.95 in revenue</span> to 
-                        platforms serving <span className="font-bold text-blue-600">17+ active users</span> — 
+                        From microservices processing <span className="font-bold text-green-600">$1,593.95 in revenue</span> to
+                        platforms serving <span className="font-bold text-blue-600">17+ active users</span> —
                         showcasing enterprise-grade development expertise.
                     </motion.p>
                 </motion.div>
@@ -302,7 +302,7 @@ const Projects = () => {
                                 key={project.id}
                                 variants={heroVariants}
                                 className={`relative bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 group hover:shadow-3xl transition-all duration-500`}
-                                whileHover={{ 
+                                whileHover={{
                                     y: -8,
                                     transition: { duration: 0.3 }
                                 }}
@@ -613,9 +613,9 @@ const Projects = () => {
                         {/* Background pattern */}
                         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10"></div>
                         <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-white/5 to-transparent rounded-full blur-3xl"></div>
-                        
+
                         <div className="relative z-10 text-center">
-                            <motion.div 
+                            <motion.div
                                 className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/20 text-green-300 rounded-full text-sm font-bold mb-6"
                                 animate={{ scale: [1, 1.05, 1] }}
                                 transition={{ duration: 2, repeat: Infinity }}
@@ -624,7 +624,7 @@ const Projects = () => {
                                 Revenue Generating
                                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                             </motion.div>
-                            
+
                             <h3 className="text-3xl md:text-5xl font-black text-white mb-6">
                                 Production Systems
                                 <br />
@@ -632,10 +632,10 @@ const Projects = () => {
                                     Generating Real Revenue
                                 </span>
                             </h3>
-                            
+
                             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-                                Experience live FastAPI microservices processing <span className="font-bold text-green-400">$1,593.95</span> in 
-                                actual revenue, serving <span className="font-bold text-blue-400">17+ active users</span> with 
+                                Experience live FastAPI microservices processing <span className="font-bold text-green-400">$1,593.95</span> in
+                                actual revenue, serving <span className="font-bold text-blue-400">17+ active users</span> with
                                 <span className="font-bold text-purple-400"> 99.9% uptime</span>.
                             </p>
 
@@ -734,7 +734,7 @@ const Projects = () => {
                             🚀 Ready to Build Something Amazing?
                         </h3>
                         <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-                            From microservices to full-stack platforms, I create production-ready solutions 
+                            From microservices to full-stack platforms, I create production-ready solutions
                             that deliver real business value. Let's turn your ideas into reality.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
