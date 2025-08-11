@@ -30,40 +30,20 @@ const projectsData = [
     },
     {
         id: 'ecommerce-microservices',
-        title: "TechMart Multi-Cloud GitOps Platform",
-        subtitle: "World's First Systematic Multi-Cloud GitOps Orchestration for Enterprise E-commerce",
-        description: "Production-ready multi-cloud e-commerce platform with GitOps orchestration, cost optimization, enterprise security, and real user validation. Deployed across 5 cloud providers with full documentation and thesis-ready architecture.",
-        focus: "Multi-Cloud GitOps, Enterprise Security, Cost Optimization, Production Monitoring",
-        technologies: ["React", "TypeScript", "Python", "Node.js", "Java", "Docker", "Kubernetes", "CI/CD", "MongoDB", "PostgreSQL", "Redis", "Elasticsearch", "Grafana"],
-        liveUrl: "https://ecommerce-app-omega-two-64.vercel.app",
-        githubUrl: "https://github.com/kousaila502/ecommerce-microservices-platform",
-        apiDocsUrl: "https://34.95.5.30.nip.io", // API Gateway base URL
+        title: "E-commerce Microservices Platform",
+        subtitle: "Scalable Backend Architecture with DevOps Pipeline",
+        description: "Microservices-based e-commerce platform demonstrating modern backend architecture, containerization, and automated deployment workflows.",
+        focus: "Backend Architecture, Microservices, DevOps, Cloud Deployment",
+        technologies: ["Python", "Node.js", "Java", "Docker", "Kubernetes", "CI/CD"],
         details: {
-            challenge: "Build the world's first systematic multi-cloud GitOps orchestration system for an enterprise-grade e-commerce platform, integrating 5 cloud providers, full automation, and production security.",
-            solution: "Implemented a multi-cloud architecture with GitOps automation using ArgoCD, cost optimization, unified JWT authentication, and full SSL/TLS security. Achieved 100% uptime, zero manual interventions, and 60%+ cost reduction.",
-            architecture: `
-Frontend Layer (Vercel - HTTPS)
-    ↓
-API Gateway Layer (Google Kubernetes Engine - HTTPS with Let's Encrypt)
-    ↓
-Microservices Layer (User & Order on GKE | Product & Cart on Heroku | Search on Render)
-    ↓
-Database Layer (Dedicated Neon PostgreSQL | MongoDB Atlas | Upstash Redis | Bonsai Elasticsearch)
-    ↓
-Orchestration Layer (Azure Container Instance)
-    ↓
-Monitoring Layer (Grafana Cloud)
-            `,
+            challenge: "Building scalable microservices architecture with automated deployment pipelines for e-commerce platform.",
+            solution: "Implemented containerized microservices with Kubernetes orchestration and GitOps deployment methodology.",
+            architecture: "6 microservices using Python, Node.js, and Java with Docker containers, deployed on Google Cloud Platform.",
             achievements: [
-                "Multi-cloud deployment across Vercel, GKE, Heroku, Render, Azure",
-                "100% GitOps automation with ArgoCD (zero manual interventions)",
-                "Enterprise-grade security: JWT, SSL/TLS, secrets management",
-                "Cost optimization: $180 → $72/month (60%+ reduction)",
-                "Production monitoring with Grafana Cloud",
-                "Real user validation: 17 active users, 100% uptime",
-                "Performance benchmarking: API response times 50-200ms",
-                "Full documentation and reproducibility for thesis defense",
-                "Novel contributions: multi-cloud GitOps, cost optimization algorithm, unified authentication"
+                "5.1x faster deployment times (175s vs 900s)",
+                "Complete CI/CD automation with ArgoCD",
+                "Multi-language microservices architecture",
+                "Production-ready on Google Cloud Platform"
             ]
         }
     },
@@ -141,10 +121,11 @@ export default async function ProjectDetail({ params }: PageProps) {
     return (
         <div className="min-h-screen bg-white">
             {/* Header */}
-            <div className={`bg-gradient-to-r ${project.featured
-                    ? 'from-blue-600 via-purple-600 to-green-600'
+            <div className={`bg-gradient-to-r ${
+                project.featured 
+                    ? 'from-blue-600 via-purple-600 to-green-600' 
                     : 'from-blue-600 to-green-600'
-                } text-white`}>
+            } text-white`}>
                 <div className="max-w-4xl mx-auto px-4 py-16">
                     <Link href="/#projects" className="text-blue-200 hover:text-white mb-4 inline-block">
                         ← Back to Projects
@@ -176,17 +157,17 @@ export default async function ProjectDetail({ params }: PageProps) {
                             Complete social welfare management system with real-time data, secure authentication, and production-grade features.
                         </p>
                         <div className="flex flex-wrap gap-3">
-                            <a
-                                href={project.liveUrl}
-                                target="_blank"
+                            <a 
+                                href={project.liveUrl} 
+                                target="_blank" 
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
                             >
                                 🚀 Live Demo
                             </a>
-                            <a
-                                href={project.apiDocsUrl}
-                                target="_blank"
+                            <a 
+                                href={project.apiDocsUrl} 
+                                target="_blank" 
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
                             >
@@ -299,9 +280,9 @@ export default async function ProjectDetail({ params }: PageProps) {
                 <section className="border-t pt-8">
                     <div className="flex flex-wrap gap-4">
                         {project.liveUrl && (
-                            <a
-                                href={project.liveUrl}
-                                target="_blank"
+                            <a 
+                                href={project.liveUrl} 
+                                target="_blank" 
                                 rel="noopener noreferrer"
                                 className="px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium text-lg"
                             >
@@ -309,9 +290,9 @@ export default async function ProjectDetail({ params }: PageProps) {
                             </a>
                         )}
                         {project.githubUrl && (
-                            <a
-                                href={project.githubUrl}
-                                target="_blank"
+                            <a 
+                                href={project.githubUrl} 
+                                target="_blank" 
                                 rel="noopener noreferrer"
                                 className="px-8 py-4 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors font-medium text-lg"
                             >
@@ -319,9 +300,9 @@ export default async function ProjectDetail({ params }: PageProps) {
                             </a>
                         )}
                         {project.apiDocsUrl && (
-                            <a
-                                href={project.apiDocsUrl}
-                                target="_blank"
+                            <a 
+                                href={project.apiDocsUrl} 
+                                target="_blank" 
                                 rel="noopener noreferrer"
                                 className="px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium text-lg"
                             >
@@ -349,7 +330,7 @@ export default async function ProjectDetail({ params }: PageProps) {
                     <section className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
                         <h3 className="text-lg font-semibold text-yellow-800 mb-2">🎯 Perfect for</h3>
                         <p className="text-yellow-700">
-                            Demonstrating enterprise-level full-stack development skills, production deployment experience,
+                            Demonstrating enterprise-level full-stack development skills, production deployment experience, 
                             and ability to create comprehensive social impact technology solutions.
                         </p>
                     </section>

@@ -141,10 +141,11 @@ export default async function ProjectDetail({ params }: PageProps) {
     return (
         <div className="min-h-screen bg-white">
             {/* Header */}
-            <div className={`bg-gradient-to-r ${project.featured
-                    ? 'from-blue-600 via-purple-600 to-green-600'
+            <div className={`bg-gradient-to-r ${
+                project.featured 
+                    ? 'from-blue-600 via-purple-600 to-green-600' 
                     : 'from-blue-600 to-green-600'
-                } text-white`}>
+            } text-white`}>
                 <div className="max-w-4xl mx-auto px-4 py-16">
                     <Link href="/#projects" className="text-blue-200 hover:text-white mb-4 inline-block">
                         ← Back to Projects
@@ -176,17 +177,17 @@ export default async function ProjectDetail({ params }: PageProps) {
                             Complete social welfare management system with real-time data, secure authentication, and production-grade features.
                         </p>
                         <div className="flex flex-wrap gap-3">
-                            <a
-                                href={project.liveUrl}
-                                target="_blank"
+                            <a 
+                                href={project.liveUrl} 
+                                target="_blank" 
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
                             >
                                 🚀 Live Demo
                             </a>
-                            <a
-                                href={project.apiDocsUrl}
-                                target="_blank"
+                            <a 
+                                href={project.apiDocsUrl} 
+                                target="_blank" 
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
                             >
@@ -299,9 +300,9 @@ export default async function ProjectDetail({ params }: PageProps) {
                 <section className="border-t pt-8">
                     <div className="flex flex-wrap gap-4">
                         {project.liveUrl && (
-                            <a
-                                href={project.liveUrl}
-                                target="_blank"
+                            <a 
+                                href={project.liveUrl} 
+                                target="_blank" 
                                 rel="noopener noreferrer"
                                 className="px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium text-lg"
                             >
@@ -309,9 +310,9 @@ export default async function ProjectDetail({ params }: PageProps) {
                             </a>
                         )}
                         {project.githubUrl && (
-                            <a
-                                href={project.githubUrl}
-                                target="_blank"
+                            <a 
+                                href={project.githubUrl} 
+                                target="_blank" 
                                 rel="noopener noreferrer"
                                 className="px-8 py-4 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors font-medium text-lg"
                             >
@@ -319,9 +320,9 @@ export default async function ProjectDetail({ params }: PageProps) {
                             </a>
                         )}
                         {project.apiDocsUrl && (
-                            <a
-                                href={project.apiDocsUrl}
-                                target="_blank"
+                            <a 
+                                href={project.apiDocsUrl} 
+                                target="_blank" 
                                 rel="noopener noreferrer"
                                 className="px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium text-lg"
                             >
@@ -349,7 +350,7 @@ export default async function ProjectDetail({ params }: PageProps) {
                     <section className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
                         <h3 className="text-lg font-semibold text-yellow-800 mb-2">🎯 Perfect for</h3>
                         <p className="text-yellow-700">
-                            Demonstrating enterprise-level full-stack development skills, production deployment experience,
+                            Demonstrating enterprise-level full-stack development skills, production deployment experience, 
                             and ability to create comprehensive social impact technology solutions.
                         </p>
                     </section>

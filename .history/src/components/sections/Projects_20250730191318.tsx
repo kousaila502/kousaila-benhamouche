@@ -58,7 +58,7 @@ const Projects = () => {
             description: "Comprehensive digital platform for managing social welfare programs, assistance requests, budget allocation, and payment processing. Built with modern web technologies to streamline social services administration.",
             focus: "Full-Stack Development, Enterprise Architecture, Social Impact Technology",
             technologies: ["React", "TypeScript", "Node.js", "Express.js", "MongoDB", "JWT Auth", "Tailwind CSS", "Vite"],
-            status: {
+            status: { 
                 live: { label: "Live Demo", url: "https://enterprise-social-platform.vercel.app" },
                 github: { label: "GitHub", url: "https://github.com/kousaila502/enterprise-social-platform" },
                 docs: { label: "API Docs", url: "https://enterprise-social-platform.onrender.com/api-docs" }
@@ -88,9 +88,10 @@ const Projects = () => {
             description: "Microservices-based e-commerce platform demonstrating modern backend architecture, containerization, and automated deployment workflows.",
             focus: "Backend Architecture, Microservices, DevOps, Cloud Deployment",
             technologies: ["Python", "Node.js", "Java", "Docker", "Kubernetes", "CI/CD"],
-            status: {
-                demo: { label: "Live Demo", url: "https://ecommerce-app-omega-two-64.vercel.app" },
-                github: { label: "GitHub", url: "https://github.com/kousaila502/ecommerce-microservices-platform" },
+            status: { 
+                demo: { label: "Coming Soon", url: "#" },
+                github: { label: "GitHub", url: "#" },
+                docs: { label: "Documentation", url: "#" }
             },
             badge: "DevOps",
             details: {
@@ -112,7 +113,7 @@ const Projects = () => {
             description: "Comprehensive REST API for Algerian tourism with advanced backend features including authentication, file handling, and role management.",
             focus: "REST API Development, Authentication, Database Design",
             technologies: ["Node.js", "Express.js", "MongoDB", "JWT", "API Documentation"],
-            status: {
+            status: { 
                 demo: { label: "Swagger Docs", url: "#" },
                 github: { label: "GitHub", url: "#" },
                 docs: { label: "API Demo", url: "#" }
@@ -137,7 +138,7 @@ const Projects = () => {
             description: "Complete fullstack solution for enterprise management with modern frontend, robust backend API, and database integration.",
             focus: "Fullstack Development, Frontend Integration, Database Management",
             technologies: ["Node.js", "React", "MySQL", "Express.js"],
-            status: {
+            status: { 
                 demo: { label: "Coming Soon", url: "#" },
                 github: { label: "GitHub", url: "#" },
                 docs: { label: "Screenshots", url: "#" }
@@ -162,7 +163,7 @@ const Projects = () => {
             description: "DevOps project demonstrating infrastructure automation, monitoring setup, and deployment optimization.",
             focus: "DevOps, Infrastructure, Monitoring, Cloud Platforms",
             technologies: ["Kubernetes", "Docker", "Cloud Platforms", "Monitoring Tools"],
-            status: {
+            status: { 
                 demo: { label: "Documentation", url: "#" },
                 github: { label: "GitHub", url: "#" },
                 docs: { label: "Infrastructure Diagrams", url: "#" }
@@ -240,7 +241,7 @@ const Projects = () => {
                                 variants={cardVariants}
                                 whileHover={{
                                     scale: 1.025,
-                                    boxShadow: project.featured
+                                    boxShadow: project.featured 
                                         ? "0 8px 32px 0 rgba(168,85,247,0.18), 0 0 24px 2px rgba(59,130,246,0.14)"
                                         : "0 8px 32px 0 rgba(59,130,246,0.13), 0 0 24px 2px rgba(168,85,247,0.14)",
                                 }}
@@ -270,16 +271,17 @@ const Projects = () => {
                                         loading="lazy"
                                     />
                                     {/* Project Badge */}
-                                    <span className={`absolute top-4 left-4 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md backdrop-blur-md ${project.featured
+                                    <span className={`absolute top-4 left-4 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md backdrop-blur-md ${
+                                        project.featured 
                                             ? 'bg-gradient-to-r from-purple-500 to-pink-500'
-                                            : project.badge === 'DevOps'
+                                            : project.badge === 'DevOps' 
                                                 ? 'bg-gradient-to-r from-blue-500 to-purple-500'
                                                 : project.badge === 'API'
                                                     ? 'bg-gradient-to-r from-green-500 to-blue-500'
                                                     : project.badge === 'Fullstack'
                                                         ? 'bg-gradient-to-r from-orange-500 to-red-500'
                                                         : 'bg-gradient-to-r from-gray-500 to-gray-600'
-                                        }`}>
+                                    }`}>
                                         {project.badge}
                                     </span>
                                 </motion.div>
@@ -293,7 +295,7 @@ const Projects = () => {
                                         </p>
                                         <p className="text-gray-600 mb-4 leading-relaxed">{project.description}</p>
                                         <p className="text-sm font-medium text-green-600 mb-4">{project.focus}</p>
-
+                                        
                                         {/* Technologies */}
                                         <div className="flex flex-wrap gap-2 mb-6">
                                             {project.technologies.map((tech, techIndex) => {
@@ -301,10 +303,11 @@ const Projects = () => {
                                                 return (
                                                     <motion.span
                                                         key={techIndex}
-                                                        className={`flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer ${project.featured
+                                                        className={`flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer ${
+                                                            project.featured 
                                                                 ? 'bg-purple-100 text-purple-700 hover:bg-purple-200 hover:text-purple-800'
                                                                 : 'bg-gray-100 text-gray-700 hover:bg-blue-100 hover:text-blue-700'
-                                                            }`}
+                                                        }`}
                                                         whileHover={{ scale: 1.13, boxShadow: "0 0 12px 2px rgba(59,130,246,0.18)" }}
                                                         title={iconData?.label || tech}
                                                         aria-label={iconData?.label || tech}
@@ -316,24 +319,25 @@ const Projects = () => {
                                             })}
                                         </div>
                                     </div>
-
+                                    
                                     {/* Action Buttons */}
                                     <div className="flex flex-wrap gap-3 mt-2">
                                         <Link
                                             href={`/projects/${project.id}`}
-                                            className={`px-4 py-2 rounded-lg transition-all duration-200 font-medium inline-block shadow-md hover:shadow-lg ${project.featured
+                                            className={`px-4 py-2 rounded-lg transition-all duration-200 font-medium inline-block shadow-md hover:shadow-lg ${
+                                                project.featured 
                                                     ? 'bg-purple-600 text-white hover:bg-purple-700'
                                                     : 'bg-blue-600 text-white hover:bg-blue-700'
-                                                }`}
+                                            }`}
                                         >
                                             Read More
                                         </Link>
-
+                                        
                                         {/* Status badges with real links */}
                                         {Object.entries(project.status).map(([key, value]) => {
                                             const statusData = value as { label: string; url: string };
                                             const isExternal = statusData.url.startsWith('http');
-
+                                            
                                             if (isExternal && statusData.url !== '#') {
                                                 return (
                                                     <a
@@ -352,10 +356,11 @@ const Projects = () => {
                                                 return (
                                                     <span
                                                         key={key}
-                                                        className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-sm shadow-md transition-all duration-200 ${statusData.url === '#'
-                                                                ? 'bg-gray-200 text-gray-500 cursor-not-allowed opacity-75'
+                                                        className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-sm shadow-md transition-all duration-200 ${
+                                                            statusData.url === '#' 
+                                                                ? 'bg-gray-200 text-gray-500 cursor-not-allowed opacity-75' 
                                                                 : statusColors[key] || "bg-gray-200 text-gray-800 cursor-pointer"
-                                                            }`}
+                                                        }`}
                                                     >
                                                         {statusIconMap[key]}
                                                         {statusData.label}
@@ -384,7 +389,7 @@ const Projects = () => {
                     >
                         <h3 className="text-2xl font-bold mb-4">🚀 Try the Live E-Social-Assistance Platform</h3>
                         <p className="text-lg mb-6 opacity-90">
-                            Experience a full-featured social welfare management system with real-time data,
+                            Experience a full-featured social welfare management system with real-time data, 
                             secure authentication, and enterprise-grade features.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">

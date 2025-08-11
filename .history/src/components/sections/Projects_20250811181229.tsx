@@ -91,6 +91,7 @@ const Projects = () => {
             status: {
                 demo: { label: "Live Demo", url: "https://ecommerce-app-omega-two-64.vercel.app" },
                 github: { label: "GitHub", url: "https://github.com/kousaila502/ecommerce-microservices-platform" },
+                docs: { label: "Documentation", url: "#" }
             },
             badge: "DevOps",
             details: {
