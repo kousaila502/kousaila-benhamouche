@@ -232,7 +232,7 @@ export default async function ProjectDetail({ params }: PageProps) {
                                 </div>
                             )}
                         </div>
-                        {project.id === 'order-service-microservice' && 'businessMetrics' in project && project.businessMetrics && 'totalRevenue' in project.businessMetrics && (
+                        {project.id === 'order-service-microservice' && 'businessMetrics' in project && project.businessMetrics && (
                             <div className="mt-4 grid md:grid-cols-2 gap-4">
                                 <div className="bg-white p-4 rounded-lg border">
                                     <div className="text-2xl font-bold text-yellow-600">${project.businessMetrics.totalRevenue}</div>
