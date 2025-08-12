@@ -83,7 +83,7 @@ const Projects = () => {
                 responseTime: "<60ms"
             },
             links: {
-                live: "https://34.95.5.30.nip.io/orders/docs",
+                live: "https://34.95.5.30.nip.io/docs",
                 github: "https://github.com/kousaila502/order-service-microservice",
                 health: "https://34.95.5.30.nip.io/orders/health"
             },
