@@ -309,7 +309,7 @@ const Skills = () => {
                 animate={{ x: xOffset, scale, opacity }}
                 transition={{ duration: 0.8, ease: 'easeInOut' }}
               >
-                <div className="absolute inset-0 z-0">
+                <div className="absolute inset-0 z-0 overflow-hidden rounded-2xl">
                   <Image
                     src={
                       categoryImages[
@@ -317,13 +317,13 @@ const Skills = () => {
                       ]
                     }
                     alt={`${category.title} illustration`}
-                    width={400}
+                    width={600}
                     height={400}
-                    className="object-cover w-full h-full opacity-20"
+                    className="object-cover w-full h-full opacity-25 blur-[1px]"
                     priority={false}
                   />
                   <div
-                    className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-20`}
+                    className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-25`}
                   />
                 </div>
                 <div className="relative z-10 p-6 flex flex-col h-full">
@@ -331,7 +331,7 @@ const Skills = () => {
                     {category.title}
                   </h3>
                   <div className="grid grid-cols-3 gap-3 mt-auto">
-                    {category.skills.slice(0, 6).map((skill) => {
+                    {category.skills.map((skill) => {
                       const iconData = skillIconMap[skill];
                       return (
                         <div
