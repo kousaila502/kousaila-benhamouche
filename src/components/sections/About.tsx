@@ -50,18 +50,18 @@ const academicBoxVariants = {
 
 const skills = [
   {
-    img: '/images/frontend.svg',
+    img: '/images/frontend.jpg',
     title: 'Frontend',
     description:
       'Modern UI/UX, React, Tailwind, and delightful user experiences.',
   },
   {
-    img: '/images/backend.svg',
+    img: '/images/backend.jpg',
     title: 'Backend',
     description: 'Robust APIs, scalable systems, and clean architecture.',
   },
   {
-    img: '/images/devops.svg',
+    img: '/images/devops.jpg ',
     title: 'DevOps',
     description: 'CI/CD, automation, cloud, and infrastructure as code.',
   },
