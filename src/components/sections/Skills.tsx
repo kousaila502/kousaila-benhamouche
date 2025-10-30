@@ -351,7 +351,7 @@ const Skills = () => {
                       }
                       alt={category.title}
                       fill
-                      className="object-cover opacity-15"
+                      className="object-cover opacity-50"
                       priority={offset === 0}
                     />
                     <div
