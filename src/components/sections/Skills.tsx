@@ -35,10 +35,10 @@ import {
 
 // Images for card backgrounds
 const categoryImages = {
-  Backend: '/images/skills-backend.jpg',
-  'DevOps & Cloud': '/images/skills-devops.jpg',
-  Frontend: '/images/skills-frontend.jpg',
-  'Tools & Other': '/images/skills-tools.jpg',
+  'Backend Development': '/images/skills-backend.jpg',
+  'Cloud & DevOps': '/images/skills-devops.jpg',
+  'Frontend Development': '/images/skills-frontend.jpg',
+  'Tools & Practices': '/images/skills-tools.jpg',
 };
 
 // Skill categories (cards)
@@ -305,7 +305,7 @@ const Skills = () => {
             return (
               <motion.div
                 key={category.title}
-                className="absolute w-[320px] h-[360px] rounded-2xl shadow-xl border border-gray-100 bg-white/90 backdrop-blur-md overflow-hidden flex flex-col"
+                className="absolute w-[340px] h-[440px] rounded-2xl shadow-xl border border-gray-100 bg-white/90 backdrop-blur-md overflow-hidden flex flex-col"
                 animate={{ x: xOffset, scale, opacity }}
                 transition={{ duration: 0.8, ease: 'easeInOut' }}
               >
