@@ -355,7 +355,7 @@ const Skills = () => {
                       priority={offset === 0}
                     />
                     <div
-                      className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-10`}
+                      className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0`}
                     />
                   </div>
 
@@ -398,13 +398,6 @@ const Skills = () => {
                           );
                         })}
                       </div>
-                    </div>
-
-                    {/* Footer Badge */}
-                    <div className="mt-4 text-center">
-                      <span className="text-sm text-gray-600 font-medium">
-                        {category.skills.length} Technologies
-                      </span>
                     </div>
                   </div>
                 </div>
