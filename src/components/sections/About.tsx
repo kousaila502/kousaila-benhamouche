@@ -61,7 +61,7 @@ const skills = [
     description: 'Robust APIs, scalable systems, and clean architecture.',
   },
   {
-    img: '/images/devops.jpg ',
+    img: '/images/devops.jpg',
     title: 'DevOps',
     description: 'CI/CD, automation, cloud, and infrastructure as code.',
   },
@@ -218,12 +218,12 @@ const About = () => {
                 style={{ transformStyle: 'preserve-3d' }}
               >
                 {/* === TOP: Full-Width Isometric Image === */}
-                <div className="relative w-full h-[60%] overflow-hidden bg-gradient-to-br from-blue-50 to-teal-50">
+                <div className="relative w-full h-[60%] overflow-hidden">
                   <Image
                     src={skill.img}
                     alt={skill.title}
                     fill
-                    className="object-contain scale-95 group-hover:scale-100 transition-transform duration-500"
+                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                     priority
                   />
                 </div>
