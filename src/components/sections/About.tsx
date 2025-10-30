@@ -50,22 +50,19 @@ const academicBoxVariants = {
 
 const skills = [
   {
-    img: '/images/frontend.jpg',
+    img: '/images/frontend.svg',
     title: 'Frontend',
-    icon: '🧠',
     description:
       'Modern UI/UX, React, Tailwind, and delightful user experiences.',
   },
   {
-    img: '/images/backend.jpg',
+    img: '/images/backend.svg',
     title: 'Backend',
-    icon: '🔧',
     description: 'Robust APIs, scalable systems, and clean architecture.',
   },
   {
-    img: '/images/devops.jpg',
+    img: '/images/devops.svg',
     title: 'DevOps',
-    icon: '⚙️',
     description: 'CI/CD, automation, cloud, and infrastructure as code.',
   },
 ];
@@ -187,51 +184,62 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* Skills Overview */}
+        {/* Skills Overview - Isometric 3D Cards */}
         <motion.div
           className="mb-20"
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.3 }}
           variants={containerVariants}
         >
           <motion.h3
-            className="text-2xl font-bold text-gray-900 mb-8 text-center"
+            className="text-3xl font-bold text-gray-900 mb-12 text-center"
             variants={fadeUp}
           >
             Skills Overview
           </motion.h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
             {skills.map((skill) => (
               <motion.div
                 key={skill.title}
-                className="flex flex-col items-center bg-gray-50 rounded-2xl shadow-md border border-gray-100 p-6 group cursor-pointer transition-all"
+                className="group flex flex-col bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100
+                   min-h-[360px] cursor-pointer
+                   transition-all duration-300
+                   hover:shadow-2xl"
                 variants={cardVariants}
                 whileHover={{
-                  scale: 1.06,
-                  boxShadow:
-                    '0 8px 32px 0 rgba(59,130,246,0.13), 0 0 24px 2px rgba(168,85,247,0.14)',
+                  y: -12,
+                  scale: 1.02,
+                  rotateX: 6,
+                  rotateY: 6,
+                  transition: { duration: 0.4, ease: 'easeOut' },
                 }}
+                style={{ transformStyle: 'preserve-3d' }}
               >
-                <div className="w-20 h-20 rounded-xl overflow-hidden mb-4 shadow-lg border-2 border-white group-hover:ring-4 group-hover:ring-blue-200 transition flex items-center justify-center bg-white relative">
+                {/* === TOP: Full-Width Isometric Image === */}
+                <div className="relative w-full h-[60%] overflow-hidden bg-gradient-to-br from-blue-50 to-teal-50">
                   <Image
                     src={skill.img}
                     alt={skill.title}
-                    width={80}
-                    height={80}
-                    className="object-cover w-full h-full"
-                    loading="lazy"
+                    fill
+                    className="object-contain scale-95 group-hover:scale-100 transition-transform duration-500"
+                    priority
                   />
-                  <span className="absolute text-3xl left-1.5 top-1.5">
-                    {skill.icon}
-                  </span>
                 </div>
-                <span className="text-lg font-bold text-gray-800 mb-2">
-                  {skill.title}
-                </span>
-                <span className="text-sm text-gray-600 text-center">
-                  {skill.description}
-                </span>
+
+                {/* === Optional Separator === */}
+                <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
+
+                {/* === BOTTOM: Title + Description === */}
+                <div className="flex flex-col justify-center items-center p-6 text-center flex-1 bg-white">
+                  <h4 className="text-2xl font-bold text-gray-800 mb-2">
+                    {skill.title}
+                  </h4>
+                  <p className="text-sm text-gray-600 leading-relaxed max-w-xs">
+                    {skill.description}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
