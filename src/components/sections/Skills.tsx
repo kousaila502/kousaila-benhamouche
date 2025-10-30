@@ -287,75 +287,146 @@ const Skills = () => {
         </motion.div>
 
         {/* Carousel Section */}
-        <div className="relative flex justify-center items-center overflow-hidden h-[420px]">
+        <div className="relative flex justify-center items-center h-[500px] mb-12">
           {skillCategories.map((category, i) => {
             const offset =
               (i - index + skillCategories.length) % skillCategories.length;
-            const xOffset =
-              offset === 0
-                ? 0
-                : offset === 1
-                ? 250
-                : offset === skillCategories.length - 1
-                ? -250
-                : 0;
-            const scale = offset === 0 ? 1 : 0.8;
-            const opacity = offset === 0 ? 1 : 0.6;
+
+            // Calculate positions and visibility
+            let xOffset = 0;
+            let scale = 0.75;
+            let opacity = 0;
+            let zIndex = 0;
+            let rotateY = 0;
+
+            if (offset === 0) {
+              // Center card - main focus
+              xOffset = 0;
+              scale = 1;
+              opacity = 1;
+              zIndex = 30;
+              rotateY = 0;
+            } else if (offset === 1) {
+              // Right card
+              xOffset = 380;
+              scale = 0.85;
+              opacity = 0.5;
+              zIndex = 20;
+              rotateY = -15;
+            } else if (offset === skillCategories.length - 1) {
+              // Left card
+              xOffset = -380;
+              scale = 0.85;
+              opacity = 0.5;
+              zIndex = 20;
+              rotateY = 15;
+            } else {
+              // Hidden cards
+              opacity = 0;
+              zIndex = 10;
+            }
 
             return (
               <motion.div
                 key={category.title}
-                className="absolute w-[340px] h-[440px] rounded-2xl shadow-xl border border-gray-100 bg-white/90 backdrop-blur-md overflow-hidden flex flex-col"
-                animate={{ x: xOffset, scale, opacity }}
-                transition={{ duration: 0.8, ease: 'easeInOut' }}
+                className="absolute w-[360px] cursor-pointer"
+                style={{ zIndex }}
+                animate={{
+                  x: xOffset,
+                  scale,
+                  opacity,
+                  rotateY,
+                }}
+                transition={{ duration: 0.7, ease: [0.34, 1.56, 0.64, 1] }}
+                onClick={() => setIndex(i)}
               >
-                <div className="absolute inset-0 z-0 overflow-hidden rounded-2xl">
-                  <Image
-                    src={
-                      categoryImages[
-                        category.title as keyof typeof categoryImages
-                      ]
-                    }
-                    alt={`${category.title} illustration`}
-                    width={600}
-                    height={400}
-                    className="object-cover w-full h-full opacity-25 blur-[1px]"
-                    priority={false}
-                  />
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-25`}
-                  />
-                </div>
-                <div className="relative z-10 p-6 flex flex-col h-full">
-                  <h3 className="text-2xl font-bold mb-4 text-gray-900">
-                    {category.title}
-                  </h3>
-                  <div className="grid grid-cols-3 gap-3 mt-auto">
-                    {category.skills.map((skill) => {
-                      const iconData = skillIconMap[skill];
-                      return (
-                        <div
-                          key={skill}
-                          className="flex flex-col items-center text-center"
-                        >
-                          <span
-                            className={`text-2xl ${
-                              iconData?.color || 'text-gray-700'
-                            }`}
-                          >
-                            {iconData?.icon}
-                          </span>
-                          <span className="text-xs mt-1 text-gray-700">
-                            {iconData?.label || skill}
-                          </span>
-                        </div>
-                      );
-                    })}
+                <div className="relative rounded-2xl shadow-2xl overflow-hidden bg-white border border-gray-200 h-[450px]">
+                  {/* Background Image with Overlay */}
+                  <div className="absolute inset-0 z-0">
+                    <Image
+                      src={
+                        categoryImages[
+                          category.title as keyof typeof categoryImages
+                        ]
+                      }
+                      alt={category.title}
+                      fill
+                      className="object-cover opacity-15"
+                      priority={offset === 0}
+                    />
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-10`}
+                    />
+                  </div>
+
+                  {/* Content */}
+                  <div className="relative z-10 h-full flex flex-col p-6">
+                    {/* Header */}
+                    <div className="mb-6">
+                      <div
+                        className={`inline-block px-4 py-1 rounded-full bg-gradient-to-r ${category.color} text-white text-sm font-semibold mb-3`}
+                      >
+                        {category.title.split(' ')[0]}
+                      </div>
+                      <h3 className="text-2xl font-bold text-gray-900">
+                        {category.title}
+                      </h3>
+                    </div>
+
+                    {/* Skills Grid - Fills remaining space */}
+                    <div className="flex-1 overflow-hidden">
+                      <div className="grid grid-cols-3 gap-4 h-full content-start">
+                        {category.skills.map((skill) => {
+                          const iconData = skillIconMap[skill];
+                          return (
+                            <motion.div
+                              key={skill}
+                              className="flex flex-col items-center justify-center p-3 rounded-xl bg-white/60 backdrop-blur-sm border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all duration-200"
+                              whileHover={{ scale: 1.05, y: -2 }}
+                            >
+                              <span
+                                className={`text-3xl mb-2 ${
+                                  iconData?.color || 'text-gray-700'
+                                }`}
+                              >
+                                {iconData?.icon}
+                              </span>
+                              <span className="text-xs font-medium text-gray-800 text-center leading-tight">
+                                {iconData?.label || skill}
+                              </span>
+                            </motion.div>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    {/* Footer Badge */}
+                    <div className="mt-4 text-center">
+                      <span className="text-sm text-gray-600 font-medium">
+                        {category.skills.length} Technologies
+                      </span>
+                    </div>
                   </div>
                 </div>
               </motion.div>
             );
           })}
+        </div>
+
+        {/* Navigation Dots */}
+        <div className="flex justify-center gap-3 mb-12">
+          {skillCategories.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setIndex(i)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                i === index
+                  ? 'bg-blue-600 w-8'
+                  : 'bg-gray-300 hover:bg-gray-400'
+              }`}
+              aria-label={`Go to slide ${i + 1}`}
+            />
+          ))}
         </div>
 
         {/* Specialized In */}
