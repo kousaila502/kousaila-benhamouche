@@ -1,36 +1,36 @@
 'use client';
 
-import React from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import Image from 'next/image';
+import React from 'react';
 import {
-  SiNodedotjs,
-  SiPython,
+  SiArgo,
+  SiCss3,
+  SiDocker,
   SiExpress,
   SiFastapi,
-  SiSpringboot,
-  SiPostgresql,
-  SiMysql,
-  SiMongodb,
-  SiGraphql,
-  SiDocker,
-  SiKubernetes,
-  SiGooglecloud,
-  SiArgo,
-  SiPrometheus,
-  SiReact,
-  SiNextdotjs,
-  SiTypescript,
-  SiJavascript,
-  SiHtml5,
-  SiCss3,
-  SiTailwindcss,
   SiGit,
-  SiLinux,
-  SiNginx,
-  SiMicrodotblog,
   SiGithubactions,
+  SiGooglecloud,
+  SiGraphql,
+  SiHtml5,
   SiIced,
+  SiJavascript,
+  SiKubernetes,
+  SiLinux,
+  SiMicrodotblog,
+  SiMongodb,
+  SiMysql,
+  SiNextdotjs,
+  SiNginx,
+  SiNodedotjs,
+  SiPostgresql,
+  SiPrometheus,
+  SiPython,
+  SiReact,
+  SiSpringboot,
+  SiTailwindcss,
+  SiTypescript,
 } from 'react-icons/si';
 
 // Images for card backgrounds
@@ -316,9 +316,11 @@ const Skills = () => {
                         category.title as keyof typeof categoryImages
                       ]
                     }
-                    alt={category.title}
-                    fill
-                    className="object-cover opacity-20"
+                    alt={`${category.title} illustration`}
+                    width={400}
+                    height={400}
+                    className="object-cover w-full h-full opacity-20"
+                    priority={false}
                   />
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-20`}
