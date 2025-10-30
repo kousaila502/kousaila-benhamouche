@@ -257,9 +257,6 @@ const About = () => {
             className="text-2xl font-bold text-gray-900 mb-4 flex items-center justify-center gap-2"
             variants={fadeUp}
           >
-            <span role="img" aria-label="lightbulb">
-              💡
-            </span>{' '}
             Passion &amp; Vision
           </motion.h3>
           <motion.p
@@ -286,9 +283,6 @@ const About = () => {
             className="text-2xl font-bold text-gray-900 mb-4 flex items-center justify-center gap-2"
             variants={fadeUp}
           >
-            <span role="img" aria-label="rocket">
-              🚀
-            </span>{' '}
             What’s Next?
           </motion.h3>
           <motion.p
@@ -302,7 +296,7 @@ const About = () => {
           </motion.p>
         </motion.div>
 
-        {/* Academic Highlight */}
+        {/* Professional Highlight */}
         <motion.div
           className="mt-16 bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 rounded-2xl p-8 shadow-xl"
           initial="hidden"
@@ -325,15 +319,17 @@ const About = () => {
         >
           <div className="text-center">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Academic Excellence
+              Professional Focus
             </h3>
             <p className="text-lg text-gray-700 mb-4">
-              Master&apos;s in Information Systems Engineering
+              Software Engineer specialized in Full-Stack Development and DevOps
             </p>
             <p className="text-blue-600 font-semibold text-xl">
-              École Supérieure d&apos;Informatique (ESI-SBA)
+              Building scalable applications and automating cloud infrastructure
             </p>
-            <p className="text-gray-600 mt-2">Graduating September 2025</p>
+            <p className="text-gray-600 mt-2">
+              Open to freelance and collaborative projects
+            </p>
           </div>
         </motion.div>
       </div>
