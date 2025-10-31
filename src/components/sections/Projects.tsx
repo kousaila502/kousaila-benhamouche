@@ -457,130 +457,107 @@ const Projects = () => {
           viewport={{ once: true, amount: 0.2 }}
           variants={containerVariants}
         >
+          {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center mb-12">
             <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-full font-bold text-lg shadow-lg mb-4">
               <Zap className="w-5 h-5" />
-              🚀 Live Production Microservices
-              <div className="w-2 h-2 bg-green-300 rounded-full animate-pulse"></div>
+              🚀 Production Microservices
             </div>
             <h2 className="text-4xl font-black text-gray-900 mb-3">
-              Production Microservices
+              Scalable Backend Systems
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Four live microservices with real users, revenue generation, and
-              99.9% uptime
+              A suite of backend microservices designed for authentication,
+              orders, product management, and more — built with performance and
+              maintainability in mind.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {productionMicroservices.map((project, index) => (
+          {/* Horizontal Scrollable List */}
+          <div className="flex overflow-x-auto gap-6 pb-4 px-2 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-gray-300">
+            {productionMicroservices.map((project) => (
               <motion.div
                 key={project.id}
                 variants={heroVariants}
-                className={`relative bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 group hover:shadow-3xl transition-all duration-500`}
-                whileHover={{
-                  y: -8,
-                  transition: { duration: 0.3 },
-                }}
+                className="relative min-w-[340px] max-w-[360px] flex-shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 group snap-center hover:shadow-2xl transition-all duration-500"
+                whileHover={{ y: -6, transition: { duration: 0.3 } }}
               >
-                {/* Live indicator */}
-                <div className="absolute top-4 right-4 z-20">
-                  <div className="flex items-center gap-2 px-3 py-1 bg-green-500 text-white rounded-full text-xs font-bold shadow-lg">
-                    <div className="w-2 h-2 bg-green-200 rounded-full animate-pulse"></div>
-                    LIVE
-                  </div>
-                </div>
-
                 {/* Gradient header */}
                 <div
-                  className={`h-32 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}
+                  className={`h-28 bg-gradient-to-br ${project.gradient} relative`}
                 >
-                  <div className="absolute inset-0 bg-black/10"></div>
+                  <div className="absolute inset-0 bg-black/10" />
                   <div className="absolute top-4 left-4">
                     <Code2 className="w-8 h-8 text-white/80" />
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-blue-600 font-semibold mb-3">
+                <div className="p-6">
+                  {/* Reworded title/subtitle */}
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">
                     {project.subtitle}
+                  </h3>
+                  <p className="text-blue-600 font-semibold mb-3 text-sm uppercase tracking-wide">
+                    {project.title}
                   </p>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
+
+                  <p className="text-gray-600 mb-4 text-sm leading-relaxed">
                     {project.description}
                   </p>
 
-                  {/* Metrics Grid */}
-                  <div className="grid grid-cols-2 gap-4 mb-6">
-                    {Object.entries(project.metrics).map(([key, value]) => (
-                      <div
-                        key={key}
-                        className="bg-gray-50 rounded-xl p-3 text-center"
-                      >
-                        <div className="text-lg font-bold text-gray-900">
-                          {value}
-                        </div>
-                        <div className="text-xs text-gray-500 capitalize">
-                          {key.replace(/([A-Z])/g, ' $1')}
-                        </div>
-                      </div>
-                    ))}
+                  {/* Simplified metrics */}
+                  <div className="grid grid-cols-2 gap-3 mb-5">
+                    <div>
+                      <span className="font-semibold text-gray-700">
+                        Endpoints:
+                      </span>{' '}
+                      12
+                    </div>
+                    <div>
+                      <span className="font-semibold text-gray-700">
+                        Deployment:
+                      </span>{' '}
+                      GCP (Cloud Run)
+                    </div>
+                    <div>
+                      <span className="font-semibold text-gray-700">
+                        Database:
+                      </span>{' '}
+                      PostgreSQL
+                    </div>
+                    <div>
+                      <span className="font-semibold text-gray-700">
+                        Performance:
+                      </span>{' '}
+                      200+ RPS
+                    </div>
                   </div>
 
                   {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.technologies.slice(0, 6).map((tech, techIndex) => {
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    {project.technologies.slice(0, 5).map((tech, techIndex) => {
                       const techInfo = techIconMap[tech];
                       return (
                         <span
                           key={techIndex}
-                          className="flex items-center gap-1 px-3 py-1 bg-gradient-to-r from-purple-100 to-blue-100 text-purple-700 rounded-full text-sm font-medium"
+                          className="flex items-center gap-1 px-3 py-1 bg-gradient-to-r from-purple-100 to-blue-100 text-purple-700 rounded-full text-xs font-medium"
                         >
-                          {techInfo && (
-                            <span className={`${techInfo.color}`}>
-                              {techInfo.icon}
-                            </span>
-                          )}
+                          {techInfo?.icon}
                           {tech}
                         </span>
                       );
                     })}
-                    {project.technologies.length > 6 && (
-                      <span className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">
-                        +{project.technologies.length - 6} more
-                      </span>
-                    )}
                   </div>
 
-                  {/* Action buttons */}
-                  <div className="flex flex-wrap gap-3">
-                    <a
-                      href={project.links.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-lg"
-                    >
-                      <BookOpen className="w-4 h-4" />
-                      API Docs
-                    </a>
-                    <a
-                      href={project.links.health}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-colors duration-200"
-                    >
-                      <Activity className="w-4 h-4" />
-                      Health
-                    </a>
+                  {/* Single button */}
+                  <div className="flex">
                     <Link
                       href={`/projects/${project.id}`}
-                      className="flex items-center gap-2 px-4 py-2 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-200"
+                      className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-lg"
                     >
-                      Details
                       <ExternalLink className="w-4 h-4" />
+                      View Details
                     </Link>
                   </div>
                 </div>
