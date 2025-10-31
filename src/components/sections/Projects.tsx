@@ -453,7 +453,7 @@ const Projects = () => {
 
         {/* 🚀 Production Microservices */}
         <motion.div
-          className="mb-24 relative"
+          className="mb-20 relative"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
@@ -464,85 +464,99 @@ const Projects = () => {
             <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-full font-bold text-lg shadow-lg mb-4">
               <Zap className="w-5 h-5" />
               🚀 Production Microservices
+              <div className="w-2 h-2 bg-green-300 rounded-full animate-pulse" />
             </div>
+
             <h2 className="text-4xl font-black text-gray-900 mb-3">
-              Scalable Backend Systems
+              Production Microservices
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              A suite of cloud-native microservices designed for reliability,
-              automation, and maintainability.
+              A showcase of live, production-ready backend systems designed for
+              scalability and automation.
             </p>
           </motion.div>
 
-          {/* Horizontal Scroll Container */}
-          <div className="relative">
-            {/* Left Fade Button */}
+          {/* Scroll Controls */}
+          <div className="relative group">
+            {/* Scroll Buttons */}
             <button
-              onClick={() =>
-                document
-                  .getElementById('microScroll')
-                  ?.scrollBy({ left: -400, behavior: 'smooth' })
-              }
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-20 p-3 bg-gradient-to-r from-white/80 to-transparent shadow-md rounded-full hover:scale-105 transition duration-200"
+              onClick={() => {
+                const el = document.getElementById('microScroll');
+                if (el) el.scrollBy({ left: -400, behavior: 'smooth' });
+              }}
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-gradient-to-r from-white/70 to-transparent p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition duration-300"
             >
               <ChevronLeft className="w-6 h-6 text-gray-700" />
             </button>
 
-            {/* Right Fade Button */}
             <button
-              onClick={() =>
-                document
-                  .getElementById('microScroll')
-                  ?.scrollBy({ left: 400, behavior: 'smooth' })
-              }
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-3 bg-gradient-to-l from-white/80 to-transparent shadow-md rounded-full hover:scale-105 transition duration-200"
+              onClick={() => {
+                const el = document.getElementById('microScroll');
+                if (el) el.scrollBy({ left: 400, behavior: 'smooth' });
+              }}
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-gradient-to-l from-white/70 to-transparent p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition duration-300"
             >
               <ChevronRight className="w-6 h-6 text-gray-700" />
             </button>
 
-            {/* Scrollable List */}
+            {/* Horizontal Scroll Container */}
             <div
               id="microScroll"
-              className="flex overflow-x-scroll scrollbar-none gap-6 px-4 pb-6 scroll-smooth snap-x snap-mandatory"
+              className="flex overflow-x-auto gap-6 px-4 pb-6 scroll-smooth snap-x snap-mandatory scrollbar-hide"
+              style={{
+                WebkitOverflowScrolling: 'touch',
+                scrollbarWidth: 'none',
+                msOverflowStyle: 'none',
+              }}
             >
               {productionMicroservices.map((project) => (
                 <motion.div
                   key={project.id}
                   variants={heroVariants}
-                  className="relative snap-center flex-shrink-0 w-[380px] h-[380px] bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden group hover:shadow-2xl transition-all duration-500"
-                  whileHover={{ y: -6, transition: { duration: 0.3 } }}
+                  className="relative snap-center flex-shrink-0 w-[440px] h-[310px] bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden group hover:shadow-3xl transition-all duration-400"
+                  whileHover={{ y: -6, transition: { duration: 0.28 } }}
                 >
-                  {/* Gradient Header */}
+                  {/* Live badge */}
+                  {project.links?.live && (
+                    <div className="absolute top-4 right-4 z-20">
+                      <div className="flex items-center gap-2 px-3 py-1 bg-green-500 text-white rounded-full text-xs font-bold shadow-lg">
+                        <div className="w-2 h-2 bg-green-200 rounded-full animate-pulse" />
+                        LIVE
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Short Gradient Header */}
                   <div
-                    className={`h-28 bg-gradient-to-br ${project.gradient} relative`}
+                    className={`h-20 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}
                   >
                     <div className="absolute inset-0 bg-black/10" />
-                    <div className="absolute top-4 left-4">
-                      <Code2 className="w-8 h-8 text-white/80" />
+                    <div className="absolute top-3 left-3">
+                      <Code2 className="w-7 h-7 text-white/85" />
                     </div>
                   </div>
 
                   {/* Card Content */}
-                  <div className="p-6 flex flex-col justify-between h-[calc(100%-7rem)]">
+                  <div className="p-6 flex flex-col justify-between h-[calc(100%-5rem)]">
                     <div>
-                      <h3 className="text-lg font-bold text-gray-900 leading-snug mb-1">
+                      <h3 className="text-lg font-bold text-gray-900 mb-1 leading-tight">
                         {project.subtitle}
                       </h3>
                       <p className="text-blue-600 font-semibold mb-3 text-sm uppercase tracking-wide">
                         {project.title}
                       </p>
-                      <p className="text-gray-600 text-sm leading-relaxed line-clamp-4">
+                      <p className="text-gray-600 mb-4 text-sm leading-relaxed line-clamp-4">
                         {project.description}
                       </p>
                     </div>
 
                     {/* Metrics */}
-                    <div className="grid grid-cols-2 gap-3 mt-4">
-                      {project.metrics &&
-                        Object.entries(project.metrics).map(([key, value]) => (
+                    {project.metrics && (
+                      <div className="grid grid-cols-2 gap-3 mb-4">
+                        {Object.entries(project.metrics).map(([key, value]) => (
                           <div
                             key={key}
-                            className="bg-gray-50 rounded-xl p-2 text-center hover:bg-gray-100 transition"
+                            className="bg-gray-50 rounded-xl p-2 text-center"
                           >
                             <div className="text-sm font-semibold text-gray-900">
                               {value}
@@ -552,22 +566,42 @@ const Projects = () => {
                             </div>
                           </div>
                         ))}
-                    </div>
+                      </div>
+                    )}
 
-                    {/* Technologies */}
-                    <div className="flex flex-wrap gap-2 mt-4">
-                      {project.technologies?.slice(0, 5).map((tech, idx) => {
-                        const techInfo = techIconMap[tech];
-                        return (
-                          <span
-                            key={idx}
-                            className="flex items-center gap-1 px-3 py-1 bg-gradient-to-r from-purple-100 to-blue-100 text-purple-700 rounded-full text-xs font-medium"
-                          >
-                            {techInfo?.icon}
-                            {tech}
-                          </span>
-                        );
-                      })}
+                    {/* Buttons */}
+                    <div className="flex flex-wrap gap-2">
+                      {project.links?.live && (
+                        <a
+                          href={project.links.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold text-sm hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow"
+                        >
+                          <BookOpen className="w-4 h-4" />
+                          API Docs
+                        </a>
+                      )}
+
+                      {project.links?.health && (
+                        <a
+                          href={project.links.health}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 px-3 py-2 bg-green-600 text-white rounded-lg font-semibold text-sm hover:bg-green-700 transition-colors duration-200"
+                        >
+                          <Activity className="w-4 h-4" />
+                          Health
+                        </a>
+                      )}
+
+                      <Link
+                        href={`/projects/${project.id}`}
+                        className="flex items-center gap-2 px-3 py-2 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold text-sm hover:bg-gray-50 transition-colors"
+                      >
+                        Details
+                        <ExternalLink className="w-4 h-4" />
+                      </Link>
                     </div>
                   </div>
                 </motion.div>
