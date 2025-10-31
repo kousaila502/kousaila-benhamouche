@@ -9,7 +9,6 @@ import {
   Cloud,
   Code2,
   Database,
-  DollarSign,
   ExternalLink,
   Gauge,
   GitBranch,
@@ -648,7 +647,7 @@ const Projects = () => {
           <motion.div variants={itemVariants} className="text-center mb-12">
             <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full font-bold text-lg shadow-lg mb-4">
               <Layers className="w-5 h-5" />
-              🌐 Full-Stack Platforms
+              Full-Stack Platforms
             </div>
             <h2 className="text-4xl font-black text-gray-900 mb-3">
               Complete Digital Solutions
@@ -764,7 +763,7 @@ const Projects = () => {
           <motion.div variants={itemVariants} className="text-center mb-12">
             <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full font-bold text-lg shadow-lg mb-4">
               <Server className="w-5 h-5" />
-              ⚙️ Backend & 🏗️ Infrastructure
+              Backend & Infrastructure
             </div>
             <h2 className="text-4xl font-black text-gray-900 mb-3">
               Technical Expertise
@@ -863,7 +862,7 @@ const Projects = () => {
           </div>
         </motion.div>
 
-        {/* 🔥 CALL TO ACTION - Revenue Highlight */}
+        {/* 🔥 CALL TO ACTION - Freelance Highlight */}
         <motion.div
           className="mt-20"
           initial="hidden"
@@ -878,118 +877,35 @@ const Projects = () => {
 
             <div className="relative z-10 text-center">
               <motion.div
-                className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/20 text-green-300 rounded-full text-sm font-bold mb-6"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full text-sm font-bold mb-6"
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
-                <DollarSign className="w-4 h-4" />
-                Revenue Generating
-                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                <Zap className="w-4 h-4" />
+                Let’s Build Together
+                <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
               </motion.div>
 
               <h3 className="text-3xl md:text-5xl font-black text-white mb-6">
-                Production Systems
+                Let's Build Something Exceptional Together
                 <br />
                 <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
-                  Generating Real Revenue
+                  Scalable • Reliable • Production-Ready
                 </span>
               </h3>
 
-              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Experience{' '}
-                <span className="font-bold text-green-400">
-                  4 live microservices
-                </span>{' '}
-                processing{' '}
-                <span className="font-bold text-green-400">$1,593.95</span> in
-                actual revenue, serving{' '}
-                <span className="font-bold text-blue-400">
-                  17+ active users
-                </span>{' '}
-                with
-                <span className="font-bold text-purple-400">
-                  {' '}
-                  99.9% uptime
-                </span>{' '}
-                across multiple technologies.
+              <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+                I help businesses and teams design and deploy high-quality
+                backend systems, CI/CD pipelines, and cloud-native applications
+                — from concept to production. Whether it’s an eCommerce
+                platform, DevOps automation, or custom API architecture, I
+                deliver solutions that scale and perform.
               </p>
-
-              {/* Stats Grid */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
-                <div className="text-center">
-                  <div className="text-3xl font-black text-green-400 mb-2">
-                    $1,593.95
-                  </div>
-                  <div className="text-sm text-gray-400">Revenue Processed</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-black text-blue-400 mb-2">
-                    17+
-                  </div>
-                  <div className="text-sm text-gray-400">Active Users</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-black text-purple-400 mb-2">
-                    99.9%
-                  </div>
-                  <div className="text-sm text-gray-400">Uptime</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-black text-orange-400 mb-2">
-                    60%
-                  </div>
-                  <div className="text-sm text-gray-400">Cost Reduction</div>
-                </div>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="flex flex-wrap justify-center gap-4">
-                <a
-                  href="https://34.95.5.30.nip.io/user/docs"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-xl font-bold text-lg hover:from-purple-600 hover:to-blue-600 transition-all duration-200 shadow-2xl group"
-                >
-                  <Users className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                  User API
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-                <a
-                  href="https://34.95.5.30.nip.io/orders/docs"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-xl font-bold text-lg hover:from-green-600 hover:to-blue-600 transition-all duration-200 shadow-2xl group"
-                >
-                  <DollarSign className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                  Order API
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-                <a
-                  href="https://ecommerce-product-service-56575270905a.herokuapp.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-xl font-bold text-lg hover:from-orange-600 hover:to-red-600 transition-all duration-200 shadow-2xl group"
-                >
-                  <Server className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                  Product API
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-                <a
-                  href="https://ecommerce-cart-service-f2a908c60d8a.herokuapp.com/swagger-ui.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-xl font-bold text-lg hover:from-blue-600 hover:to-purple-600 transition-all duration-200 shadow-2xl group"
-                >
-                  <Database className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                  Cart API
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-              </div>
 
               {/* Tech Stack Showcase */}
               <div className="mt-12 pt-8 border-t border-white/10">
                 <p className="text-gray-400 text-sm mb-4">
-                  Powered by modern technology stack
+                  Powered by a modern technology stack
                 </p>
                 <div className="flex flex-wrap justify-center gap-6">
                   {[
@@ -1033,7 +949,7 @@ const Projects = () => {
                       icon: <SiMongodb />,
                       color: 'text-green-500',
                     },
-                  ].map((tech, index) => (
+                  ].map((tech) => (
                     <motion.div
                       key={tech.name}
                       className="flex items-center gap-2 text-gray-300 text-sm"
@@ -1062,7 +978,7 @@ const Projects = () => {
         >
           <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl p-8 border border-gray-200">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              🚀 Ready to Build Something Amazing?
+              Ready to Build Something Amazing?
             </h3>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
               From microservices to full-stack platforms, I create
