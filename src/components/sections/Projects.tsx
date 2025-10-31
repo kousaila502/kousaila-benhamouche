@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import {
   Activity,
   BookOpen,
+  ChevronLeft,
+  ChevronRight,
   Cloud,
   Code2,
   Database,
