@@ -463,7 +463,7 @@ const Projects = () => {
           <motion.div variants={itemVariants} className="text-center mb-12">
             <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-full font-bold text-lg shadow-lg mb-4">
               <Zap className="w-5 h-5" />
-               Production Microservices
+              Production Microservices
               <div className="w-2 h-2 bg-green-300 rounded-full animate-pulse" />
             </div>
 
@@ -513,7 +513,7 @@ const Projects = () => {
                 <motion.div
                   key={project.id}
                   variants={heroVariants}
-                  className="relative snap-center flex-shrink-0 w-[440px] h-[330px] bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden group hover:shadow-3xl transition-all duration-400"
+                  className="relative snap-center flex-shrink-0 w-[440px] h-auto bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden group hover:shadow-3xl transition-all duration-400"
                   whileHover={{ y: -6, transition: { duration: 0.28 } }}
                 >
                   {/* Live badge */}
@@ -537,7 +537,7 @@ const Projects = () => {
                   </div>
 
                   {/* Content */}
-                  <div className="p-6 flex flex-col justify-between h-[calc(100%-5rem)]">
+                  <div className="p-6 flex flex-col justify-between">
                     <div>
                       <h3 className="text-lg font-bold text-gray-900 mb-1 leading-tight">
                         {project.subtitle}
