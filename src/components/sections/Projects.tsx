@@ -85,7 +85,7 @@ const Projects = () => {
       title: 'FastAPI-powered User Authentication & Access Control Service',
       subtitle: 'Role-Based Authentication System',
       description:
-        'Enterprise-grade authentication microservice serving 17+ active users with JWT, role-based access control, and real-time admin dashboard.',
+        'Secure authentication and authorization service with role-based access control, token management, and user registration APIs built for scalable web applications.',
       technologies: [
         'Python',
         'FastAPI',
@@ -98,10 +98,10 @@ const Projects = () => {
         'SQLAlchemy',
       ],
       metrics: {
-        users: '17+',
-        uptime: '99.9%',
+        Endpoints: '26',
+        Database: 'PostgreSQL',
+        deployment: 'ArgoCD · GKE (GCP)',
         responseTime: '<50ms',
-        deployment: 'Kubernetes',
       },
       links: {
         live: 'https://34.95.5.30.nip.io/user/docs',
@@ -116,7 +116,7 @@ const Projects = () => {
       title: 'Node.js Service for Order Processing and Payment Workflow',
       subtitle: 'E-Commerce Order & Checkout System',
       description:
-        'Comprehensive order processing system with real-time analytics. Currently processing $1,593.95 in revenue with 9 completed orders.',
+        'Handles order creation, checkout workflows, and payment integration with robust error handling and asynchronous processing for e-commerce platforms.',
       technologies: [
         'Python',
         'FastAPI',
@@ -129,9 +129,9 @@ const Projects = () => {
         'Business Analytics',
       ],
       metrics: {
-        revenue: '$1,593.95',
-        orders: '9',
-        uptime: '99.9%',
+        Endpoints: '11',
+        Database: 'PostgreSQL',
+        deployment: 'ArgoCD · GKE (GCP)',
         responseTime: '<60ms',
       },
       links: {
@@ -147,7 +147,7 @@ const Projects = () => {
       title: 'Express-based Microservice for Managing Products and Stock',
       subtitle: 'E-Commerce Product Catalog & Inventory API',
       description:
-        'Comprehensive product catalog management with MongoDB Atlas, advanced search, inventory tracking, and deals management for e-commerce platform.',
+        'RESTful API for managing products, categories, and inventory updates, supporting efficient data access and seamless integration with client applications.',
       technologies: [
         'Node.js',
         'Express.js',
@@ -160,7 +160,7 @@ const Projects = () => {
         'CI/CD',
       ],
       metrics: {
-        endpoints: '20+',
+        endpoints: '25',
         database: 'MongoDB Atlas',
         deployment: 'Heroku',
         responseTime: '<150ms',
@@ -179,7 +179,7 @@ const Projects = () => {
       title: 'Reactive Java Spring Boot Service for Cart Persistence and Sync',
       subtitle: 'E-Commerce Shopping Cart & Session Service',
       description:
-        'High-performance reactive cart management with Spring WebFlux, Redis session storage, real-time synchronization, and seamless checkout integration.',
+        'Manages shopping cart sessions, product synchronization, and real-time updates across multiple devices using a reactive architecture for smooth user experience.',
       technologies: [
         'Java',
         'Spring Boot',
@@ -191,8 +191,8 @@ const Projects = () => {
         'Reactive Programming',
       ],
       metrics: {
-        performance: 'Reactive',
-        storage: 'Redis',
+        Endpoints: '15',
+        Database: 'Redis',
         deployment: 'Heroku',
         responseTime: '<100ms',
       },
