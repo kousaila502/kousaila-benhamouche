@@ -862,7 +862,7 @@ const Projects = () => {
           </div>
         </motion.div>
 
-        {/* 🔥 CALL TO ACTION - Freelance Highlight */}
+        {/* 🔥 CALL TO ACTION - Unified Freelance Highlight */}
         <motion.div
           className="mt-20"
           initial="hidden"
@@ -902,8 +902,29 @@ const Projects = () => {
                 deliver solutions that scale and perform.
               </p>
 
+              {/* CTA Buttons */}
+              <div className="flex flex-wrap justify-center gap-4 mb-12">
+                <Link
+                  href="#contact"
+                  className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-lg"
+                >
+                  <Users className="w-5 h-5" />
+                  Let's Collaborate
+                </Link>
+                <a
+                  href="https://github.com/kousaila502"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-8 py-3 border-2 border-gray-300 text-gray-200 rounded-xl font-semibold hover:bg-white/10 transition-colors duration-200"
+                >
+                  <SiGithub className="w-5 h-5" />
+                  View All Projects
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
+
               {/* Tech Stack Showcase */}
-              <div className="mt-12 pt-8 border-t border-white/10">
+              <div className="mt-8 pt-8 border-t border-white/10">
                 <p className="text-gray-400 text-sm mb-4">
                   Powered by a modern technology stack
                 </p>
@@ -964,45 +985,6 @@ const Projects = () => {
                   ))}
                 </div>
               </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* 🎯 PORTFOLIO CTA */}
-        <motion.div
-          className="mt-16 text-center"
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.5 }}
-          variants={itemVariants}
-        >
-          <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl p-8 border border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Ready to Build Something Amazing?
-            </h3>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              From microservices to full-stack platforms, I create
-              production-ready solutions that deliver real business value. Let's
-              turn your ideas into reality.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link
-                href="#contact"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-lg"
-              >
-                <Users className="w-5 h-5" />
-                Let's Collaborate
-              </Link>
-              <a
-                href="https://github.com/kousaila502"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-3 border-2 border-gray-300 text-gray-700 rounded-xl font-semibold hover:bg-gray-50 transition-colors duration-200"
-              >
-                <SiGithub className="w-5 h-5" />
-                View All Projects
-                <ExternalLink className="w-4 h-4" />
-              </a>
             </div>
           </div>
         </motion.div>
