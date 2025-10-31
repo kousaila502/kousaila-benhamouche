@@ -463,7 +463,7 @@ const Projects = () => {
           <motion.div variants={itemVariants} className="text-center mb-12">
             <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-full font-bold text-lg shadow-lg mb-4">
               <Zap className="w-5 h-5" />
-              🚀 Production Microservices
+               Production Microservices
               <div className="w-2 h-2 bg-green-300 rounded-full animate-pulse" />
             </div>
 
@@ -472,48 +472,48 @@ const Projects = () => {
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               A showcase of live, production-ready backend systems designed for
-              scalability and automation.
+              scalability, reliability, and automation.
             </p>
           </motion.div>
 
-          {/* Scroll Controls */}
+          {/* Horizontal Scroll Wrapper */}
           <div className="relative group">
             {/* Scroll Buttons */}
             <button
               onClick={() => {
                 const el = document.getElementById('microScroll');
-                if (el) el.scrollBy({ left: -400, behavior: 'smooth' });
+                if (el) el.scrollBy({ left: -450, behavior: 'smooth' });
               }}
-              className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-gradient-to-r from-white/70 to-transparent p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition duration-300"
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-gradient-to-r from-white/70 to-transparent shadow-xl backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-105"
             >
-              <ChevronLeft className="w-6 h-6 text-gray-700" />
+              <ChevronLeft className="w-7 h-7 text-gray-700" />
             </button>
 
             <button
               onClick={() => {
                 const el = document.getElementById('microScroll');
-                if (el) el.scrollBy({ left: 400, behavior: 'smooth' });
+                if (el) el.scrollBy({ left: 450, behavior: 'smooth' });
               }}
-              className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-gradient-to-l from-white/70 to-transparent p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition duration-300"
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-gradient-to-l from-white/70 to-transparent shadow-xl backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-105"
             >
-              <ChevronRight className="w-6 h-6 text-gray-700" />
+              <ChevronRight className="w-7 h-7 text-gray-700" />
             </button>
 
-            {/* Horizontal Scroll Container */}
+            {/* Scrollable Cards */}
             <div
               id="microScroll"
-              className="flex overflow-x-auto gap-6 px-4 pb-6 scroll-smooth snap-x snap-mandatory scrollbar-hide"
+              className="flex overflow-x-auto gap-6 px-4 pb-6 scroll-smooth snap-x snap-mandatory"
               style={{
                 WebkitOverflowScrolling: 'touch',
                 scrollbarWidth: 'none',
                 msOverflowStyle: 'none',
               }}
             >
-              {productionMicroservices.map((project) => (
+              {productionMicroservices.map((project, index) => (
                 <motion.div
                   key={project.id}
                   variants={heroVariants}
-                  className="relative snap-center flex-shrink-0 w-[440px] h-[310px] bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden group hover:shadow-3xl transition-all duration-400"
+                  className="relative snap-center flex-shrink-0 w-[440px] h-[330px] bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden group hover:shadow-3xl transition-all duration-400"
                   whileHover={{ y: -6, transition: { duration: 0.28 } }}
                 >
                   {/* Live badge */}
@@ -526,7 +526,7 @@ const Projects = () => {
                     </div>
                   )}
 
-                  {/* Short Gradient Header */}
+                  {/* Gradient Header */}
                   <div
                     className={`h-20 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}
                   >
@@ -536,7 +536,7 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  {/* Card Content */}
+                  {/* Content */}
                   <div className="p-6 flex flex-col justify-between h-[calc(100%-5rem)]">
                     <div>
                       <h3 className="text-lg font-bold text-gray-900 mb-1 leading-tight">
@@ -553,23 +553,52 @@ const Projects = () => {
                     {/* Metrics */}
                     {project.metrics && (
                       <div className="grid grid-cols-2 gap-3 mb-4">
-                        {Object.entries(project.metrics).map(([key, value]) => (
-                          <div
-                            key={key}
-                            className="bg-gray-50 rounded-xl p-2 text-center"
-                          >
-                            <div className="text-sm font-semibold text-gray-900">
-                              {value}
+                        {Object.entries(project.metrics)
+                          .slice(0, 4)
+                          .map(([key, value]) => (
+                            <div
+                              key={key}
+                              className="bg-gray-50 rounded-xl p-2 text-center"
+                            >
+                              <div className="text-sm font-semibold text-gray-900">
+                                {value}
+                              </div>
+                              <div className="text-[10px] text-gray-500 capitalize">
+                                {key.replace(/([A-Z])/g, ' $1')}
+                              </div>
                             </div>
-                            <div className="text-[10px] text-gray-500 capitalize">
-                              {key.replace(/([A-Z])/g, ' $1')}
-                            </div>
-                          </div>
-                        ))}
+                          ))}
                       </div>
                     )}
 
-                    {/* Buttons */}
+                    {/* Technologies */}
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {project.technologies
+                        .slice(0, 6)
+                        .map((tech, techIndex) => {
+                          const techInfo = techIconMap[tech];
+                          return (
+                            <span
+                              key={techIndex}
+                              className="flex items-center gap-1 px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium"
+                            >
+                              {techInfo && (
+                                <span className={`${techInfo.color}`}>
+                                  {techInfo.icon}
+                                </span>
+                              )}
+                              {tech}
+                            </span>
+                          );
+                        })}
+                      {project.technologies.length > 6 && (
+                        <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded-full text-xs">
+                          +{project.technologies.length - 6} more
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Action Buttons */}
                     <div className="flex flex-wrap gap-2">
                       {project.links?.live && (
                         <a
@@ -582,7 +611,6 @@ const Projects = () => {
                           API Docs
                         </a>
                       )}
-
                       {project.links?.health && (
                         <a
                           href={project.links.health}
@@ -594,7 +622,6 @@ const Projects = () => {
                           Health
                         </a>
                       )}
-
                       <Link
                         href={`/projects/${project.id}`}
                         className="flex items-center gap-2 px-3 py-2 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold text-sm hover:bg-gray-50 transition-colors"
