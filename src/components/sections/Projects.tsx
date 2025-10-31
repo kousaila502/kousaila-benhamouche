@@ -82,8 +82,8 @@ const Projects = () => {
   const productionMicroservices = [
     {
       id: 'user-service-microservice',
-      title: 'User Service Microservice',
-      subtitle: 'Production FastAPI Authentication System',
+      title: 'FastAPI-powered User Authentication & Access Control Service',
+      subtitle: 'Role-Based Authentication System',
       description:
         'Enterprise-grade authentication microservice serving 17+ active users with JWT, role-based access control, and real-time admin dashboard.',
       technologies: [
@@ -113,8 +113,8 @@ const Projects = () => {
     },
     {
       id: 'order-service-microservice',
-      title: 'Order Service Microservice',
-      subtitle: 'Revenue-Generating Order Management',
+      title: 'Node.js Service for Order Processing and Payment Workflow',
+      subtitle: 'E-Commerce Order & Checkout System',
       description:
         'Comprehensive order processing system with real-time analytics. Currently processing $1,593.95 in revenue with 9 completed orders.',
       technologies: [
@@ -144,8 +144,8 @@ const Projects = () => {
     },
     {
       id: 'products-microservice',
-      title: 'Product Service Microservice',
-      subtitle: 'Node.js Product Management System',
+      title: 'Express-based Microservice for Managing Products and Stock',
+      subtitle: 'E-Commerce Product Catalog & Inventory API',
       description:
         'Comprehensive product catalog management with MongoDB Atlas, advanced search, inventory tracking, and deals management for e-commerce platform.',
       technologies: [
@@ -176,8 +176,8 @@ const Projects = () => {
     },
     {
       id: 'cart-api-service',
-      title: 'Cart Service Microservice',
-      subtitle: 'Reactive Java Spring Boot Cart System',
+      title: 'Reactive Java Spring Boot Service for Cart Persistence and Sync',
+      subtitle: 'E-Commerce Shopping Cart & Session Service',
       description:
         'High-performance reactive cart management with Spring WebFlux, Redis session storage, real-time synchronization, and seamless checkout integration.',
       technologies: [
