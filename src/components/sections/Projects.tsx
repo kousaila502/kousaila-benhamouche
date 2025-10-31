@@ -449,9 +449,9 @@ const Projects = () => {
           </motion.p>
         </motion.div>
 
-        {/* 🚀 PRODUCTION MICROSERVICES - Hero Section */}
+        {/* 🚀 Production Microservices */}
         <motion.div
-          className="mb-20"
+          className="mb-24 relative"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
@@ -467,102 +467,110 @@ const Projects = () => {
               Scalable Backend Systems
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              A suite of backend microservices designed for authentication,
-              orders, product management, and more — built with performance and
-              maintainability in mind.
+              A suite of cloud-native microservices designed for reliability,
+              automation, and maintainability.
             </p>
           </motion.div>
 
-          {/* Horizontal Scrollable List */}
-          <div className="flex overflow-x-auto gap-6 pb-4 px-2 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-gray-300">
-            {productionMicroservices.map((project) => (
-              <motion.div
-                key={project.id}
-                variants={heroVariants}
-                className="relative min-w-[340px] max-w-[360px] flex-shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 group snap-center hover:shadow-2xl transition-all duration-500"
-                whileHover={{ y: -6, transition: { duration: 0.3 } }}
-              >
-                {/* Gradient header */}
-                <div
-                  className={`h-28 bg-gradient-to-br ${project.gradient} relative`}
+          {/* Horizontal Scroll Container */}
+          <div className="relative">
+            {/* Left Fade Button */}
+            <button
+              onClick={() =>
+                document
+                  .getElementById('microScroll')
+                  ?.scrollBy({ left: -400, behavior: 'smooth' })
+              }
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-20 p-3 bg-gradient-to-r from-white/80 to-transparent shadow-md rounded-full hover:scale-105 transition duration-200"
+            >
+              <ChevronLeft className="w-6 h-6 text-gray-700" />
+            </button>
+
+            {/* Right Fade Button */}
+            <button
+              onClick={() =>
+                document
+                  .getElementById('microScroll')
+                  ?.scrollBy({ left: 400, behavior: 'smooth' })
+              }
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-3 bg-gradient-to-l from-white/80 to-transparent shadow-md rounded-full hover:scale-105 transition duration-200"
+            >
+              <ChevronRight className="w-6 h-6 text-gray-700" />
+            </button>
+
+            {/* Scrollable List */}
+            <div
+              id="microScroll"
+              className="flex overflow-x-scroll scrollbar-none gap-6 px-4 pb-6 scroll-smooth snap-x snap-mandatory"
+            >
+              {productionMicroservices.map((project) => (
+                <motion.div
+                  key={project.id}
+                  variants={heroVariants}
+                  className="relative snap-center flex-shrink-0 w-[380px] h-[380px] bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden group hover:shadow-2xl transition-all duration-500"
+                  whileHover={{ y: -6, transition: { duration: 0.3 } }}
                 >
-                  <div className="absolute inset-0 bg-black/10" />
-                  <div className="absolute top-4 left-4">
-                    <Code2 className="w-8 h-8 text-white/80" />
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-6">
-                  {/* Reworded title/subtitle */}
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">
-                    {project.subtitle}
-                  </h3>
-                  <p className="text-blue-600 font-semibold mb-3 text-sm uppercase tracking-wide">
-                    {project.title}
-                  </p>
-
-                  <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-                    {project.description}
-                  </p>
-
-                  {/* Simplified metrics */}
-                  <div className="grid grid-cols-2 gap-3 mb-5">
-                    <div>
-                      <span className="font-semibold text-gray-700">
-                        Endpoints:
-                      </span>{' '}
-                      12
-                    </div>
-                    <div>
-                      <span className="font-semibold text-gray-700">
-                        Deployment:
-                      </span>{' '}
-                      GCP (Cloud Run)
-                    </div>
-                    <div>
-                      <span className="font-semibold text-gray-700">
-                        Database:
-                      </span>{' '}
-                      PostgreSQL
-                    </div>
-                    <div>
-                      <span className="font-semibold text-gray-700">
-                        Performance:
-                      </span>{' '}
-                      200+ RPS
+                  {/* Gradient Header */}
+                  <div
+                    className={`h-28 bg-gradient-to-br ${project.gradient} relative`}
+                  >
+                    <div className="absolute inset-0 bg-black/10" />
+                    <div className="absolute top-4 left-4">
+                      <Code2 className="w-8 h-8 text-white/80" />
                     </div>
                   </div>
 
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 mb-5">
-                    {project.technologies.slice(0, 5).map((tech, techIndex) => {
-                      const techInfo = techIconMap[tech];
-                      return (
-                        <span
-                          key={techIndex}
-                          className="flex items-center gap-1 px-3 py-1 bg-gradient-to-r from-purple-100 to-blue-100 text-purple-700 rounded-full text-xs font-medium"
-                        >
-                          {techInfo?.icon}
-                          {tech}
-                        </span>
-                      );
-                    })}
-                  </div>
+                  {/* Card Content */}
+                  <div className="p-6 flex flex-col justify-between h-[calc(100%-7rem)]">
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-900 leading-snug mb-1">
+                        {project.subtitle}
+                      </h3>
+                      <p className="text-blue-600 font-semibold mb-3 text-sm uppercase tracking-wide">
+                        {project.title}
+                      </p>
+                      <p className="text-gray-600 text-sm leading-relaxed line-clamp-4">
+                        {project.description}
+                      </p>
+                    </div>
 
-                  {/* Single button */}
-                  <div className="flex">
-                    <Link
-                      href={`/projects/${project.id}`}
-                      className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-lg"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      View Details
-                    </Link>
+                    {/* Metrics */}
+                    <div className="grid grid-cols-2 gap-3 mt-4">
+                      {project.metrics &&
+                        Object.entries(project.metrics).map(([key, value]) => (
+                          <div
+                            key={key}
+                            className="bg-gray-50 rounded-xl p-2 text-center hover:bg-gray-100 transition"
+                          >
+                            <div className="text-sm font-semibold text-gray-900">
+                              {value}
+                            </div>
+                            <div className="text-[10px] text-gray-500 capitalize">
+                              {key.replace(/([A-Z])/g, ' $1')}
+                            </div>
+                          </div>
+                        ))}
+                    </div>
+
+                    {/* Technologies */}
+                    <div className="flex flex-wrap gap-2 mt-4">
+                      {project.technologies?.slice(0, 5).map((tech, idx) => {
+                        const techInfo = techIconMap[tech];
+                        return (
+                          <span
+                            key={idx}
+                            className="flex items-center gap-1 px-3 py-1 bg-gradient-to-r from-purple-100 to-blue-100 text-purple-700 rounded-full text-xs font-medium"
+                          >
+                            {techInfo?.icon}
+                            {tech}
+                          </span>
+                        );
+                      })}
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
         </motion.div>
 
