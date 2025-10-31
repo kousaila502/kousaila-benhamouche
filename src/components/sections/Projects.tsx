@@ -145,7 +145,7 @@ const Projects = () => {
     {
       id: 'products-microservice',
       title: 'Express-based Microservice for Managing Products and Stock',
-      subtitle: 'E-Commerce Product Catalog & Inventory API',
+      subtitle: 'E-Commerce Product Management API',
       description:
         'RESTful API for managing products, categories, and inventory updates, supporting efficient data access and seamless integration with client applications.',
       technologies: [
@@ -177,7 +177,7 @@ const Projects = () => {
     {
       id: 'cart-api-service',
       title: 'Reactive Java Spring Boot Service for Cart Persistence and Sync',
-      subtitle: 'E-Commerce Shopping Cart & Session Service',
+      subtitle: 'E-Commerce Shopping Cart Service',
       description:
         'Manages shopping cart sessions, product synchronization, and real-time updates across multiple devices using a reactive architecture for smooth user experience.',
       technologies: [
@@ -212,9 +212,9 @@ const Projects = () => {
     {
       id: 'e-social-assistance',
       title: 'E-Social-Assistance Platform',
-      subtitle: 'Enterprise Social Welfare Management',
+      subtitle: 'Digital Social Welfare Management System',
       description:
-        'Complete digital platform for managing social welfare programs with role-based access control, budget allocation, and payment processing.',
+        'A complete web platform designed for public and private institutions to manage social welfare programs efficiently. Includes secure role-based access, budget tracking, and automated payment workflows tailored for Algerian administrative processes.',
       technologies: [
         'React',
         'TypeScript',
@@ -227,9 +227,9 @@ const Projects = () => {
       ],
       features: [
         '4 User Roles',
-        '8-Stage Workflow',
-        'Real-time Updates',
-        'Algerian Localization',
+        '8-Step Approval Workflow',
+        'Real-time Data Synchronization',
+        'Localized Interface for Algerian Standards',
       ],
       links: {
         live: 'https://enterprise-social-platform.vercel.app',
@@ -241,10 +241,10 @@ const Projects = () => {
     },
     {
       id: 'ecommerce-microservices',
-      title: 'Multi-Cloud GitOps Platform',
-      subtitle: '5-Cloud Architecture with Cost Optimization',
+      title: 'E-Commerce DevOps Automation Platform',
+      subtitle: 'Scalable CI/CD and GitOps Infrastructure for Online Stores',
       description:
-        "World's first systematic multi-cloud GitOps orchestration achieving 60% cost reduction and 100% automation.",
+        'A production-ready DevOps platform tailored for eCommerce systems, integrating GitOps principles for continuous deployment and scalability. Built using Kubernetes and ArgoCD to ensure automated rollouts, seamless updates, and cloud-native reliability across multiple environments.',
       technologies: [
         'React',
         'Python',
@@ -256,10 +256,10 @@ const Projects = () => {
         'Grafana',
       ],
       features: [
-        '5 Cloud Providers',
-        '60% Cost Reduction',
-        '100% GitOps',
-        'Real Users',
+        'Full CI/CD Workflow (GitHub Actions + ArgoCD)',
+        'Kubernetes-Based Deployment on GCP',
+        'Containerized Microservices Architecture',
+        'Optimized for Scalable eCommerce Operations',
       ],
       links: {
         live: 'https://ecommerce-app-omega-two-64.vercel.app',
